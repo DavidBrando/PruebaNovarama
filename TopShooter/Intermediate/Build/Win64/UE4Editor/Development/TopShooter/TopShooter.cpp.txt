@@ -1,0 +1,2 @@
+D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\Definitions.TopShooter.h
+d:\github\pruebanovarama\topshooter\source\topshooter\TopShooter.h

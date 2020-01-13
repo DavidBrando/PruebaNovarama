@@ -1,0 +1,3 @@
+D:\GitHub\PruebaNovarama\TopShooter\Source\TopShooter\TopShooter.Build.cs
+D:\GitHub\PruebaNovarama\TopShooter\Source\TopShooter.Target.cs
+D:\GitHub\PruebaNovarama\TopShooter\Source\TopShooterEditor.Target.cs
