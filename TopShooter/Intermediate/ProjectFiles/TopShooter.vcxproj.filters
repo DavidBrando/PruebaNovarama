@@ -60,4 +60,20 @@
       <Filter>Source\TopShooter</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\TopShooter\Weapons.h">
+      <Filter>Source\TopShooter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TopShooter\Bullets.h">
+      <Filter>Source\TopShooter</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\TopShooter\Weapons.cpp">
+      <Filter>Source\TopShooter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopShooter\Bullets.cpp">
+      <Filter>Source\TopShooter</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>

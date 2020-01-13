@@ -6,6 +6,8 @@
 #include "GameFramework/Character.h"
 #include "TopShooterCharacter.generated.h"
 
+class AWeapons;
+
 UCLASS(Blueprintable)
 class ATopShooterCharacter : public ACharacter
 {
@@ -16,6 +18,10 @@ public:
 
 	// Called every frame.
 	virtual void Tick(float DeltaSeconds) override;
+	virtual void BeginPlay();
+	void MoveForward(float axis);
+	void MoveRight(float axis);
+	void SettingMovement(bool yawControl, bool orientationMotion);
 
 	/** Returns TopDownCameraComponent subobject **/
 	FORCEINLINE class UCameraComponent* GetTopDownCameraComponent() const { return TopDownCameraComponent; }
@@ -23,6 +29,8 @@ public:
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	/** Returns CursorToWorld subobject **/
 	FORCEINLINE class UDecalComponent* GetCursorToWorld() { return CursorToWorld; }
+
+	void LookAtPosition(FVector pos);
 
 private:
 	/** Top down camera */
@@ -36,5 +44,12 @@ private:
 	/** A decal that projects to the cursor location. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UDecalComponent* CursorToWorld;
+
+	AWeapons *currentWeapon;
+
+public:
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<class AWeapons> myWeapon;
 };
 

@@ -37,3 +37,9 @@ D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Edi
 d:\program files (x86)\epic games\ue_4.22\engine\source\runtime\headmounteddisplay\public\IIdentifiableXRDevice.h
 D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\HeadMountedDisplay\IIdentifiableXRDevice.generated.h
 D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\HeadMountedDisplay\HeadMountedDisplayFunctionLibrary.generated.h
+D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Source\Runtime\Engine\Classes\Kismet/KismetMathLibrary.h
+D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Source\Runtime\Core\Public\Misc/QualifiedFrameTime.h
+D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\KismetMathLibrary.generated.h
+d:\program files (x86)\epic games\ue_4.22\engine\source\runtime\engine\classes\kismet\KismetMathLibrary.inl
+d:\github\pruebanovarama\topshooter\source\topshooter\Weapons.h
+D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Inc\TopShooter\Weapons.generated.h

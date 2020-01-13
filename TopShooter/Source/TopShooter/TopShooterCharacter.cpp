@@ -5,12 +5,17 @@
 #include "Camera/CameraComponent.h"
 #include "Components/DecalComponent.h"
 #include "Components/CapsuleComponent.h"
+#include "Components/SceneComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/PlayerController.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "HeadMountedDisplayFunctionLibrary.h"
+#include "Kismet/KismetMathLibrary.h"
 #include "Materials/Material.h"
+#include "Weapons.h"
+#include "Engine/EngineTypes.h"
 #include "Engine/World.h"
+
 
 ATopShooterCharacter::ATopShooterCharacter()
 {
@@ -44,17 +49,32 @@ ATopShooterCharacter::ATopShooterCharacter()
 	// Create a decal in the world to show the cursor's location
 	CursorToWorld = CreateDefaultSubobject<UDecalComponent>("CursorToWorld");
 	CursorToWorld->SetupAttachment(RootComponent);
+
 	static ConstructorHelpers::FObjectFinder<UMaterial> DecalMaterialAsset(TEXT("Material'/Game/TopDownCPP/Blueprints/M_Cursor_Decal.M_Cursor_Decal'"));
 	if (DecalMaterialAsset.Succeeded())
 	{
 		CursorToWorld->SetDecalMaterial(DecalMaterialAsset.Object);
 	}
+
 	CursorToWorld->DecalSize = FVector(16.0f, 32.0f, 32.0f);
 	CursorToWorld->SetRelativeRotation(FRotator(90.0f, 0.0f, 0.0f).Quaternion());
 
 	// Activate ticking in order to update the cursor every frame.
 	PrimaryActorTick.bCanEverTick = true;
 	PrimaryActorTick.bStartWithTickEnabled = true;
+	
+}
+
+void ATopShooterCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+	FActorSpawnParameters SpawnParams;
+	SpawnParams.Owner = this;
+	currentWeapon = GetWorld()->SpawnActor<AWeapons>(myWeapon,FVector(0.0f), FRotator(0.0f), SpawnParams);
+
+	FAttachmentTransformRules rules(EAttachmentRule::SnapToTarget, EAttachmentRule::SnapToTarget, EAttachmentRule::SnapToTarget, false);
+	currentWeapon->AttachToComponent(Cast<USceneComponent>(GetMesh()), rules, "WeaponSocket");
+	
 }
 
 void ATopShooterCharacter::Tick(float DeltaSeconds)
@@ -63,21 +83,7 @@ void ATopShooterCharacter::Tick(float DeltaSeconds)
 
 	if (CursorToWorld != nullptr)
 	{
-		if (UHeadMountedDisplayFunctionLibrary::IsHeadMountedDisplayEnabled())
-		{
-			if (UWorld* World = GetWorld())
-			{
-				FHitResult HitResult;
-				FCollisionQueryParams Params(NAME_None, FCollisionQueryParams::GetUnknownStatId());
-				FVector StartLocation = TopDownCameraComponent->GetComponentLocation();
-				FVector EndLocation = TopDownCameraComponent->GetComponentRotation().Vector() * 2000.0f;
-				Params.AddIgnoredActor(this);
-				World->LineTraceSingleByChannel(HitResult, StartLocation, EndLocation, ECC_Visibility, Params);
-				FQuat SurfaceRotation = HitResult.ImpactNormal.ToOrientationRotator().Quaternion();
-				CursorToWorld->SetWorldLocationAndRotation(HitResult.Location, SurfaceRotation);
-			}
-		}
-		else if (APlayerController* PC = Cast<APlayerController>(GetController()))
+		if (APlayerController* PC = Cast<APlayerController>(GetController()))
 		{
 			FHitResult TraceHitResult;
 			PC->GetHitResultUnderCursor(ECC_Visibility, true, TraceHitResult);
@@ -87,4 +93,52 @@ void ATopShooterCharacter::Tick(float DeltaSeconds)
 			CursorToWorld->SetWorldRotation(CursorR);
 		}
 	}
+}
+
+
+
+
+void ATopShooterCharacter::MoveForward(float axis) {
+
+	if ((Controller != NULL) && (axis != 0.0f))
+	{
+		const FRotator Rotation = Controller->GetControlRotation();
+		const FRotator YawRotation(0, Rotation.Yaw, 0);
+
+
+		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
+		AddMovementInput(Direction, axis);
+	}
+
+}
+
+void ATopShooterCharacter::MoveRight(float axis) {
+
+	if ((Controller != NULL) && (axis != 0.0f))
+	{
+
+		const FRotator Rotation = Controller->GetControlRotation();
+		const FRotator YawRotation(0, Rotation.Yaw, 0);
+
+		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+		AddMovementInput(Direction, axis);
+	}
+
+}
+
+void ATopShooterCharacter::LookAtPosition(FVector pos)
+{
+
+	const FVector myPos = GetActorLocation();
+	FRotator rot = UKismetMathLibrary::FindLookAtRotation(myPos, pos);
+
+	GEngine->AddOnScreenDebugMessage(-1, 0.0f, FColor::Cyan, rot.ToString());
+
+	SetActorRotation(FRotator(0.0f, rot.Yaw, 0.0f));
+}
+
+void ATopShooterCharacter::SettingMovement(bool yawControl, bool orientationMotion)
+{
+	bUseControllerRotationYaw = yawControl;
+	GetCharacterMovement()->bOrientRotationToMovement = orientationMotion;
 }
