@@ -65,7 +65,7 @@ void ATopShooterPlayerController::MoveToMouseCursor()
 			if (myPawn != nullptr) {
 
 				myPawn->LookAtPosition(Hit.ImpactPoint);
-
+				myPawn->ShootWeapon(Hit.ImpactPoint);
 			}
 		}
 	

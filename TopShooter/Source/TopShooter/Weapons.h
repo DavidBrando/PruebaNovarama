@@ -7,6 +7,7 @@
 #include "Weapons.generated.h"
 
 class USkeletalMeshComponent;
+class USceneComponent;
 
 UCLASS()
 class TOPSHOOTER_API AWeapons : public AActor
@@ -19,8 +20,11 @@ public:
 
 protected:
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Weapon, meta = (AllowPrivateAccess = "true"))
 	USkeletalMeshComponent* mesh;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Weapon, meta = (AllowPrivateAccess = "true"))
+	USceneComponent* spawnPoint;
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -30,4 +34,13 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	void ShootProjectile();
+	void ResetShooting();
+
+
+private:
+
+	bool shooting;
+	FTimerHandle FireRatioDelay;
+	float shootingRate = 0.3f;
 };

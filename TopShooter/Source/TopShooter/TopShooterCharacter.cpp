@@ -62,7 +62,9 @@ ATopShooterCharacter::ATopShooterCharacter()
 	// Activate ticking in order to update the cursor every frame.
 	PrimaryActorTick.bCanEverTick = true;
 	PrimaryActorTick.bStartWithTickEnabled = true;
-	
+
+	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &ATopShooterCharacter::OnOverlapBegin);
+
 }
 
 void ATopShooterCharacter::BeginPlay()
@@ -137,8 +139,19 @@ void ATopShooterCharacter::LookAtPosition(FVector pos)
 	SetActorRotation(FRotator(0.0f, rot.Yaw, 0.0f));
 }
 
+void ATopShooterCharacter::OnOverlapBegin(UPrimitiveComponent * OverlappedComp, AActor * OtherActor, UPrimitiveComponent * OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
+{
+}
+
 void ATopShooterCharacter::SettingMovement(bool yawControl, bool orientationMotion)
 {
 	bUseControllerRotationYaw = yawControl;
 	GetCharacterMovement()->bOrientRotationToMovement = orientationMotion;
+}
+
+
+void ATopShooterCharacter::ShootWeapon(FVector end) {
+
+	currentWeapon->ShootProjectile();
+
 }

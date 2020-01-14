@@ -6,6 +6,11 @@
 #include "GameFramework/Actor.h"
 #include "Bullets.generated.h"
 
+class UCapsuleComponent;
+class UParticleSystemComponent;
+class USceneComponent;
+class UProjectileMovementComponent;
+
 UCLASS()
 class TOPSHOOTER_API ABullets : public AActor
 {
@@ -18,6 +23,18 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = BulletInfo, meta = (AllowPrivateAccess = "true"))
+	UCapsuleComponent* capsule;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = BulletInfo, meta = (AllowPrivateAccess = "true"))
+	USceneComponent* root;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = BulletInfo, meta = (AllowPrivateAccess = "true"))
+	UParticleSystemComponent *bullet;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = BulletInfo, meta = (AllowPrivateAccess = "true"))
+	UProjectileMovementComponent *projectileMovement;
 
 public:	
 	// Called every frame
