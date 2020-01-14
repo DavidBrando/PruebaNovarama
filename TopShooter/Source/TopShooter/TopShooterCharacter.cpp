@@ -65,6 +65,9 @@ ATopShooterCharacter::ATopShooterCharacter()
 
 	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &ATopShooterCharacter::OnOverlapBegin);
 
+
+	health = 125.0f;
+	maxHealth = health;
 }
 
 void ATopShooterCharacter::BeginPlay()
@@ -150,8 +153,8 @@ void ATopShooterCharacter::SettingMovement(bool yawControl, bool orientationMoti
 }
 
 
-void ATopShooterCharacter::ShootWeapon(FVector end) {
+void ATopShooterCharacter::ShootWeapon() {
 
-	currentWeapon->ShootProjectile();
+	currentWeapon->ShootProjectile(GetActorForwardVector());
 
 }

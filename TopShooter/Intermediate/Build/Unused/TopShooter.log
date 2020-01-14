@@ -2,16 +2,19 @@
   Creating makefile for TopShooterEditor (ini files are newer than makefile)
   Parsing headers for TopShooterEditor
     Running UnrealHeaderTool "D:\GitHub\PruebaNovarama\TopShooter\TopShooter.uproject" "D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\TopShooterEditor\Development\TopShooterEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
-  Reflection code generated for TopShooterEditor in 5,2682512 seconds
+  Reflection code generated for TopShooterEditor in 5,7346565 seconds
   Using Visual Studio 2017 14.16.27023 toolchain (D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.16.27023) and Windows 10.0.17763.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  Building 6 actions with 4 processes...
-    [1/6] Weapons.gen.cpp
-    [2/6] TopShooterCharacter.cpp
-    [3/6] Weapons.cpp
-    [4/6] UE4Editor-TopShooter-0080.lib
-       Creando biblioteca D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\UE4Editor-TopShooter-0080.lib y objeto D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\UE4Editor-TopShooter-0080.exp
-    [5/6] UE4Editor-TopShooter-0080.dll
-       Creando biblioteca D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\UE4Editor-TopShooter-0080.suppressed.lib y objeto D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\UE4Editor-TopShooter-0080.suppressed.exp
-    [6/6] TopShooterEditor.target
-  Total time in Parallel executor: 17,84 seconds
-  Total execution time: 24,86 seconds
+  Building 9 actions with 4 processes...
+    [1/9] Weapons.gen.cpp
+    [2/9] TopShooterCharacter.gen.cpp
+    [3/9] TopShooterGameMode.cpp
+    [4/9] TopShooterPlayerController.cpp
+    [5/9] TopShooterCharacter.cpp
+    [6/9] Weapons.cpp
+    [7/9] UE4Editor-TopShooter-0108.lib
+       Creando biblioteca D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\UE4Editor-TopShooter-0108.lib y objeto D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\UE4Editor-TopShooter-0108.exp
+    [8/9] UE4Editor-TopShooter-0108.dll
+       Creando biblioteca D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\UE4Editor-TopShooter-0108.suppressed.lib y objeto D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\UE4Editor-TopShooter-0108.suppressed.exp
+    [9/9] TopShooterEditor.target
+  Total time in Parallel executor: 13,33 seconds
+  Total execution time: 21,20 seconds

@@ -23,7 +23,7 @@ public:
 	void MoveRight(float axis);
 	void SettingMovement(bool yawControl, bool orientationMotion);
 
-	void ShootWeapon(FVector end);
+	void ShootWeapon();
 
 	/** Returns TopDownCameraComponent subobject **/
 	FORCEINLINE class UCameraComponent* GetTopDownCameraComponent() const { return TopDownCameraComponent; }
@@ -50,11 +50,27 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UDecalComponent* CursorToWorld;
 
-	AWeapons *currentWeapon;
+
 
 public:
 
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<class AWeapons> myWeapon;
+
+
+
+protected:
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = InfoCharacter, meta = (AllowPrivateAccess = "true"))
+	float health;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = InfoCharacter, meta = (AllowPrivateAccess = "true"))
+	float maxHealth;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = InfoCharacter, meta = (AllowPrivateAccess = "true"))
+	AWeapons *currentWeapon;
+
+
+
 };
 

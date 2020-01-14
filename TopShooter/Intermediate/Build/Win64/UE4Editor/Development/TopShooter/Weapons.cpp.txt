@@ -682,3 +682,5 @@ D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Source\Runtime\Engine\Classes\K
 D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Source\Runtime\Core\Public\Misc/QualifiedFrameTime.h
 D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\KismetMathLibrary.generated.h
 d:\program files (x86)\epic games\ue_4.22\engine\source\runtime\engine\classes\kismet\KismetMathLibrary.inl
+d:\github\pruebanovarama\topshooter\source\topshooter\Bullets.h
+D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Inc\TopShooter\Bullets.generated.h

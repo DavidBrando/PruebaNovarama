@@ -17,6 +17,8 @@ void EmptyLinkFunctionForGeneratedCodeWeapons() {}
 	TOPSHOOTER_API UClass* Z_Construct_UClass_AWeapons();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_TopShooter();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+	TOPSHOOTER_API UClass* Z_Construct_UClass_ABullets_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
 // End Cross Module References
@@ -33,6 +35,10 @@ void EmptyLinkFunctionForGeneratedCodeWeapons() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bulletType_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FClassPropertyParams NewProp_bulletType;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_spawnPoint_MetaData[];
 #endif
@@ -56,6 +62,13 @@ void EmptyLinkFunctionForGeneratedCodeWeapons() {}
 	};
 #endif
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AWeapons_Statics::NewProp_bulletType_MetaData[] = {
+		{ "Category", "Weapons" },
+		{ "ModuleRelativePath", "Weapons.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_AWeapons_Statics::NewProp_bulletType = { "bulletType", nullptr, (EPropertyFlags)0x0014000000000001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AWeapons, bulletType), Z_Construct_UClass_ABullets_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_AWeapons_Statics::NewProp_bulletType_MetaData, ARRAY_COUNT(Z_Construct_UClass_AWeapons_Statics::NewProp_bulletType_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AWeapons_Statics::NewProp_spawnPoint_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Weapon" },
@@ -74,6 +87,7 @@ void EmptyLinkFunctionForGeneratedCodeWeapons() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWeapons_Statics::NewProp_mesh = { "mesh", nullptr, (EPropertyFlags)0x00200800000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AWeapons, mesh), Z_Construct_UClass_USkeletalMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AWeapons_Statics::NewProp_mesh_MetaData, ARRAY_COUNT(Z_Construct_UClass_AWeapons_Statics::NewProp_mesh_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AWeapons_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapons_Statics::NewProp_bulletType,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapons_Statics::NewProp_spawnPoint,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapons_Statics::NewProp_mesh,
 	};
@@ -104,7 +118,7 @@ void EmptyLinkFunctionForGeneratedCodeWeapons() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AWeapons, 3037882605);
+	IMPLEMENT_CLASS(AWeapons, 4101681169);
 	template<> TOPSHOOTER_API UClass* StaticClass<AWeapons>()
 	{
 		return AWeapons::StaticClass();

@@ -95,7 +95,10 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ATopShooterCharacter); \
 #define TopShooter_Source_TopShooter_TopShooterCharacter_h_14_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__TopDownCameraComponent() { return STRUCT_OFFSET(ATopShooterCharacter, TopDownCameraComponent); } \
 	FORCEINLINE static uint32 __PPO__CameraBoom() { return STRUCT_OFFSET(ATopShooterCharacter, CameraBoom); } \
-	FORCEINLINE static uint32 __PPO__CursorToWorld() { return STRUCT_OFFSET(ATopShooterCharacter, CursorToWorld); }
+	FORCEINLINE static uint32 __PPO__CursorToWorld() { return STRUCT_OFFSET(ATopShooterCharacter, CursorToWorld); } \
+	FORCEINLINE static uint32 __PPO__health() { return STRUCT_OFFSET(ATopShooterCharacter, health); } \
+	FORCEINLINE static uint32 __PPO__maxHealth() { return STRUCT_OFFSET(ATopShooterCharacter, maxHealth); } \
+	FORCEINLINE static uint32 __PPO__currentWeapon() { return STRUCT_OFFSET(ATopShooterCharacter, currentWeapon); }
 
 
 #define TopShooter_Source_TopShooter_TopShooterCharacter_h_11_PROLOG

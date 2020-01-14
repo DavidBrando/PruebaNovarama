@@ -8,6 +8,7 @@
 
 class USkeletalMeshComponent;
 class USceneComponent;
+class ABullets;
 
 UCLASS()
 class TOPSHOOTER_API AWeapons : public AActor
@@ -17,6 +18,7 @@ class TOPSHOOTER_API AWeapons : public AActor
 public:	
 	// Sets default values for this actor's properties
 	AWeapons();
+
 
 protected:
 
@@ -34,10 +36,15 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	void ShootProjectile();
+	void ShootProjectile(FVector forwardPlayer);
 	void ResetShooting();
 
 
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<class ABullets> bulletType;
+
+	
 private:
 
 	bool shooting;

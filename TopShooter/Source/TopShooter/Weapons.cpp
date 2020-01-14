@@ -8,6 +8,7 @@
 #include "Components/SceneComponent.h"
 #include "DrawDebugHelpers.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "Bullets.h"
 
 
 // Sets default values
@@ -21,6 +22,7 @@ AWeapons::AWeapons()
 	spawnPoint = CreateDefaultSubobject<USceneComponent>(TEXT("Bullet Spawn"));
 	spawnPoint->SetupAttachment(mesh, "Muzzle");
 	shooting = false;
+	
 }
 
 // Called when the game starts or when spawned
@@ -38,7 +40,7 @@ void AWeapons::Tick(float DeltaTime)
 }
 
 
-void AWeapons::ShootProjectile() {
+void AWeapons::ShootProjectile(FVector forwardPlayer) {
 
 
 	if (shooting == false) {
@@ -47,7 +49,8 @@ void AWeapons::ShootProjectile() {
 
 		FHitResult OutHit;
 		FVector start = spawnPoint->GetComponentLocation();
-		FVector end = (spawnPoint->GetForwardVector() * 500.0f) + start;
+		//FVector end = (spawnPoint->GetForwardVector() * 500.0f) + start;
+		FVector end = (forwardPlayer * 500.0f) + start;
 
 		FCollisionQueryParams ColisionParams;
 		
@@ -56,6 +59,26 @@ void AWeapons::ShootProjectile() {
 		bool hit = GetWorld()->LineTraceSingleByChannel(OutHit, start, end, ECC_Visibility, ColisionParams);
 
 		GetWorld()->GetTimerManager().SetTimer(FireRatioDelay, this, &AWeapons::ResetShooting, shootingRate, false);
+
+		FActorSpawnParameters SpawnParams;
+		SpawnParams.Owner = this->GetOwner();
+		FRotator rot;
+		
+		if (hit) {
+			
+			rot = UKismetMathLibrary::FindLookAtRotation(start, OutHit.ImpactPoint);
+
+		}
+
+		else {
+
+			rot = UKismetMathLibrary::FindLookAtRotation(start, OutHit.TraceEnd);
+
+		}
+
+
+
+		GetWorld()->SpawnActor<ABullets>(bulletType, start, rot, SpawnParams);
 
 	}
 
