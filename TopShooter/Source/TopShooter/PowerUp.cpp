@@ -20,6 +20,8 @@ APowerUp::APowerUp()
 	sphere = CreateDefaultSubobject<USphereComponent>(TEXT("Colider"));
 	sphere->SetCollisionProfileName(TEXT("OverlapAll"));
 	sphere->SetupAttachment(root);
+	sphere->SetSphereRadius(64.0f);
+
 
 	powerUp = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("PowerUp"));
 	powerUp->SetupAttachment(root);

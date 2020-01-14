@@ -45,6 +45,9 @@ public:
 	void SetFireRate(float f);
 	void SetPowerShoot(float b);
 
+	bool GetPowerShoot() { return powerShoots; }
+	bool GetFireRateUp() { return fireRateUp; }
+
 
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<class ABullets> bulletType;
@@ -54,6 +57,7 @@ private:
 
 	bool shooting;
 	bool powerShoots;
+	bool fireRateUp;
 
 	FTimerHandle FireRatioDelay;
 	FTimerHandle ResetPowerUpFire;

@@ -23,6 +23,7 @@ AWeapons::AWeapons()
 	spawnPoint->SetupAttachment(mesh, "Muzzle");
 	shooting = false;
 	powerShoots = false;
+	fireRateUp = false;
 	
 }
 
@@ -95,7 +96,7 @@ void AWeapons::ShootProjectile(FVector forwardPlayer) {
 
 void AWeapons::SetFireRate(float f)
 {
-
+	fireRateUp = true;
 	shootingRate = 0.15;
 
 	GetWorld()->GetTimerManager().SetTimer(ResetPowerUpFire, this, &AWeapons::ResetPowerUpFireRate, f, false);
@@ -120,6 +121,7 @@ void AWeapons::ResetShooting()
 
 void AWeapons::ResetPowerUpFireRate()
 {
+	fireRateUp = false;
 	shootingRate = defaultRate;
 	GetWorld()->GetTimerManager().ClearTimer(ResetPowerUpFire);
 
