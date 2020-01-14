@@ -56,7 +56,7 @@ void AWeapons::ShootProjectile(FVector forwardPlayer) {
 
 		FCollisionQueryParams ColisionParams;
 		
-		DrawDebugLine(GetWorld(), start, end, FColor::Green, shootingRate);
+		//DrawDebugLine(GetWorld(), start, end, FColor::Green, shootingRate);
 
 		bool hit = GetWorld()->LineTraceSingleByChannel(OutHit, start, end, ECC_Visibility, ColisionParams);
 

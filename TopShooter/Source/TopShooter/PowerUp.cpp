@@ -18,7 +18,7 @@ APowerUp::APowerUp()
 	root = CreateDefaultSubobject<USceneComponent>(TEXT("root"));
 	RootComponent = root;
 	sphere = CreateDefaultSubobject<USphereComponent>(TEXT("Colider"));
-	sphere->SetCollisionProfileName(TEXT("OverlapAll"));
+	sphere->SetCollisionProfileName(TEXT("PowerUpSetup"));
 	sphere->SetupAttachment(root);
 	sphere->SetSphereRadius(64.0f);
 
@@ -62,7 +62,7 @@ void APowerUp::OnOverlapBegin(UPrimitiveComponent * OverlappedComp, AActor * Oth
 
 		case ETypePowerUp::Heal:
 
-			character->HealUp(value);
+			character->HealSystem(value);
 
 			break;
 

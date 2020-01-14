@@ -65,9 +65,9 @@ ATopShooterCharacter::ATopShooterCharacter()
 
 	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &ATopShooterCharacter::OnOverlapBegin);
 
-
 	health = 125.0f;
 	maxHealth = health;
+	live = true;
 }
 
 void ATopShooterCharacter::BeginPlay()
@@ -146,12 +146,16 @@ void ATopShooterCharacter::OnOverlapBegin(UPrimitiveComponent * OverlappedComp, 
 {
 }
 
-void ATopShooterCharacter::HealUp(float f)
+void ATopShooterCharacter::HealSystem(float f)
 {
 	health += f;
 
 	if (health > maxHealth) {
 		health = maxHealth;
+	}
+
+	else if (health <= 0.0f) {
+		live = false;
 	}
 
 

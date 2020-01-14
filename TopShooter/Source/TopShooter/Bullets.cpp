@@ -8,7 +8,6 @@
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "Particles/ParticleSystem.h"
-#include "PowerUp.h"
 
 
 // Sets default values
@@ -19,7 +18,7 @@ ABullets::ABullets()
 	root = CreateDefaultSubobject<USceneComponent>(TEXT("root"));
 	RootComponent = root;
 	capsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Colider"));
-	capsule->SetCollisionProfileName(TEXT("OverlapAll"));
+	capsule->SetCollisionProfileName(TEXT("BulletType"));
 	capsule->SetupAttachment(root);
 
 	
@@ -61,16 +60,14 @@ void ABullets::OnOverlapBegin(UPrimitiveComponent * OverlappedComp, AActor * Oth
 	
 	if (OtherActor != nullptr && OtherActor != GetOwner()) {
 
-		if (!Cast<APowerUp>(OtherActor) && !Cast<ABullets>(OtherActor)) {
+		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, OtherActor->GetName() + "---- ME MUERO");
 
-			GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, OtherActor->GetName() + "---- ME MUERO");
+		//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, SweepResult.ImpactPoint.ToString());
 
-			//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, SweepResult.ImpactPoint.ToString());
+		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), explosion, GetActorLocation(), FRotator(0.0f));
 
-			UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), explosion, GetActorLocation(), FRotator(0.0f));
-
-			Destroy();
-		}
+		Destroy();
+	
 
 	}
 
