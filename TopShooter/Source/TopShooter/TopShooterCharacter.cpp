@@ -146,6 +146,17 @@ void ATopShooterCharacter::OnOverlapBegin(UPrimitiveComponent * OverlappedComp, 
 {
 }
 
+void ATopShooterCharacter::HealUp(float f)
+{
+	health += f;
+
+	if (health > maxHealth) {
+		health = maxHealth;
+	}
+
+
+}
+
 void ATopShooterCharacter::SettingMovement(bool yawControl, bool orientationMotion)
 {
 	bUseControllerRotationYaw = yawControl;

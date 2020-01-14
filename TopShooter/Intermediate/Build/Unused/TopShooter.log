@@ -1,20 +1,17 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build (D:\GitHub\PruebaNovarama).
-  Creating makefile for TopShooterEditor (ini files are newer than makefile)
   Parsing headers for TopShooterEditor
     Running UnrealHeaderTool "D:\GitHub\PruebaNovarama\TopShooter\TopShooter.uproject" "D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\TopShooterEditor\Development\TopShooterEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
-  Reflection code generated for TopShooterEditor in 5,7346565 seconds
+  Reflection code generated for TopShooterEditor in 5,8348088 seconds
   Using Visual Studio 2017 14.16.27023 toolchain (D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.16.27023) and Windows 10.0.17763.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  Building 9 actions with 4 processes...
-    [1/9] Weapons.gen.cpp
-    [2/9] TopShooterCharacter.gen.cpp
-    [3/9] TopShooterGameMode.cpp
-    [4/9] TopShooterPlayerController.cpp
-    [5/9] TopShooterCharacter.cpp
-    [6/9] Weapons.cpp
-    [7/9] UE4Editor-TopShooter-0108.lib
-       Creando biblioteca D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\UE4Editor-TopShooter-0108.lib y objeto D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\UE4Editor-TopShooter-0108.exp
-    [8/9] UE4Editor-TopShooter-0108.dll
-       Creando biblioteca D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\UE4Editor-TopShooter-0108.suppressed.lib y objeto D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\UE4Editor-TopShooter-0108.suppressed.exp
-    [9/9] TopShooterEditor.target
-  Total time in Parallel executor: 13,33 seconds
-  Total execution time: 21,20 seconds
+  Building 4 actions with 4 processes...
+    [1/4] PowerUp.cpp
+d:\program files (x86)\epic games\ue_4.22\engine\source\runtime\core\public\Containers/EnumAsByte.h(19): warning C4996: 'TEnumAsByte_EnumClass<true>': TEnumAsByte is not intended for use with enum classes - please derive your enum class from uint8 instead. Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+    d:\program files (x86)\epic games\ue_4.22\engine\source\runtime\core\public\Containers/EnumAsByte.h(10): note: vea la declaración de 'TEnumAsByte_EnumClass<true>'
+    d:\github\pruebanovarama\topshooter\source\topshooter\PowerUp.h(48): note: vea la referencia a la creación de instancias de plantilla clase de 'TEnumAsByte<ETypePowerUp>' que se está compilando
+    [2/4] UE4Editor-TopShooter-0117.lib
+       Creando biblioteca D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\UE4Editor-TopShooter-0117.lib y objeto D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\UE4Editor-TopShooter-0117.exp
+    [3/4] UE4Editor-TopShooter-0117.dll
+       Creando biblioteca D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\UE4Editor-TopShooter-0117.suppressed.lib y objeto D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\UE4Editor-TopShooter-0117.suppressed.exp
+    [4/4] TopShooterEditor.target
+  Total time in Parallel executor: 2,24 seconds
+  Total execution time: 8,90 seconds

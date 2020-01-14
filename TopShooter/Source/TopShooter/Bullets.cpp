@@ -8,6 +8,8 @@
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "Particles/ParticleSystem.h"
+#include "PowerUp.h"
+
 
 // Sets default values
 ABullets::ABullets()
@@ -31,7 +33,7 @@ ABullets::ABullets()
 	bullet = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Bullet"));
 	bullet->SetupAttachment(root);
 
-
+	damage = 20.f;
 
 }
 
@@ -56,19 +58,26 @@ void ABullets::OnOverlapBegin(UPrimitiveComponent * OverlappedComp, AActor * Oth
 
 	//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, "Me llaman");
 
-
+	
 	if (OtherActor != nullptr && OtherActor != GetOwner()) {
-		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, OtherActor->GetName() + "---- ME MUERO");
 
-		//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, SweepResult.ImpactPoint.ToString());
+		if (!Cast<APowerUp>(OtherActor) && !Cast<ABullets>(OtherActor)) {
 
-		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), explosion, GetActorLocation(), FRotator(0.0f));
+			GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, OtherActor->GetName() + "---- ME MUERO");
 
-		Destroy();
+			//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, SweepResult.ImpactPoint.ToString());
+
+			UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), explosion, GetActorLocation(), FRotator(0.0f));
+
+			Destroy();
+		}
+
 	}
 
 
 
 
 }
+
+
 

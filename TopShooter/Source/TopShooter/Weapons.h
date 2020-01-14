@@ -37,8 +37,13 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	void ShootProjectile(FVector forwardPlayer);
-	void ResetShooting();
 
+	void ResetShooting();
+	void ResetPowerUpFireRate();
+	void ResetPowerUpShootStrong();
+
+	void SetFireRate(float f);
+	void SetPowerShoot(float b);
 
 
 	UPROPERTY(EditAnywhere)
@@ -48,6 +53,12 @@ public:
 private:
 
 	bool shooting;
+	bool powerShoots;
+
 	FTimerHandle FireRatioDelay;
+	FTimerHandle ResetPowerUpFire;
+	FTimerHandle ResetPowerUpShoot;
+
 	float shootingRate = 0.3f;
+	float defaultRate = shootingRate;
 };

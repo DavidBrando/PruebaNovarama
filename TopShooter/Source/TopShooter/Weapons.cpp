@@ -22,6 +22,7 @@ AWeapons::AWeapons()
 	spawnPoint = CreateDefaultSubobject<USceneComponent>(TEXT("Bullet Spawn"));
 	spawnPoint->SetupAttachment(mesh, "Muzzle");
 	shooting = false;
+	powerShoots = false;
 	
 }
 
@@ -78,13 +79,37 @@ void AWeapons::ShootProjectile(FVector forwardPlayer) {
 
 
 
-		GetWorld()->SpawnActor<ABullets>(bulletType, start, rot, SpawnParams);
+		ABullets* b = GetWorld()->SpawnActor<ABullets>(bulletType, start, rot, SpawnParams);
+		
+
+		if(powerShoots)
+			b->SetDamage(40.0f);
+
+
 
 	}
 
 
 
 }
+
+void AWeapons::SetFireRate(float f)
+{
+
+	shootingRate = 0.15;
+
+	GetWorld()->GetTimerManager().SetTimer(ResetPowerUpFire, this, &AWeapons::ResetPowerUpFireRate, f, false);
+
+
+}
+
+void AWeapons::SetPowerShoot(float b)
+{
+	powerShoots = true; 
+	GetWorld()->GetTimerManager().SetTimer(ResetPowerUpShoot, this, &AWeapons::ResetPowerUpShootStrong, b, false);
+
+}
+
 
 void AWeapons::ResetShooting()
 {
@@ -93,3 +118,16 @@ void AWeapons::ResetShooting()
 
 }
 
+void AWeapons::ResetPowerUpFireRate()
+{
+	shootingRate = defaultRate;
+	GetWorld()->GetTimerManager().ClearTimer(ResetPowerUpFire);
+
+}
+
+void AWeapons::ResetPowerUpShootStrong()
+{
+	powerShoots = false;
+	GetWorld()->GetTimerManager().ClearTimer(ResetPowerUpShoot);
+
+}
