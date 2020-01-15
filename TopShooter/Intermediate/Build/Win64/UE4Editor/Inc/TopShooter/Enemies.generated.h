@@ -8,13 +8,48 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UPrimitiveComponent;
+class AActor;
+struct FHitResult;
 #ifdef TOPSHOOTER_Enemies_generated_h
 #error "Enemies.generated.h already included, missing '#pragma once' in Enemies.h"
 #endif
 #define TOPSHOOTER_Enemies_generated_h
 
-#define TopShooter_Source_TopShooter_Enemies_h_17_RPC_WRAPPERS
-#define TopShooter_Source_TopShooter_Enemies_h_17_RPC_WRAPPERS_NO_PURE_DECLS
+#define TopShooter_Source_TopShooter_Enemies_h_17_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execOnOverlapBegin) \
+	{ \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverlappedComp); \
+		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_OtherBodyIndex); \
+		P_GET_UBOOL(Z_Param_bFromSweep); \
+		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_SweepResult); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnOverlapBegin(Z_Param_OverlappedComp,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult); \
+		P_NATIVE_END; \
+	}
+
+
+#define TopShooter_Source_TopShooter_Enemies_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execOnOverlapBegin) \
+	{ \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverlappedComp); \
+		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_OtherBodyIndex); \
+		P_GET_UBOOL(Z_Param_bFromSweep); \
+		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_SweepResult); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnOverlapBegin(Z_Param_OverlappedComp,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult); \
+		P_NATIVE_END; \
+	}
+
+
 #define TopShooter_Source_TopShooter_Enemies_h_17_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAEnemies(); \
@@ -58,11 +93,10 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AEnemies); \
 
 
 #define TopShooter_Source_TopShooter_Enemies_h_17_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__health() { return STRUCT_OFFSET(AEnemies, health); } \
-	FORCEINLINE static uint32 __PPO__maxHealth() { return STRUCT_OFFSET(AEnemies, maxHealth); } \
 	FORCEINLINE static uint32 __PPO__damage() { return STRUCT_OFFSET(AEnemies, damage); } \
 	FORCEINLINE static uint32 __PPO__arm1() { return STRUCT_OFFSET(AEnemies, arm1); } \
-	FORCEINLINE static uint32 __PPO__arm2() { return STRUCT_OFFSET(AEnemies, arm2); }
+	FORCEINLINE static uint32 __PPO__arm2() { return STRUCT_OFFSET(AEnemies, arm2); } \
+	FORCEINLINE static uint32 __PPO__healthSystem() { return STRUCT_OFFSET(AEnemies, healthSystem); }
 
 
 #define TopShooter_Source_TopShooter_Enemies_h_14_PROLOG

@@ -25,3 +25,7 @@ D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Source\Runtime\Engine\Classes\C
 D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Source\Runtime\Engine\Classes\Components/ShapeComponent.h
 D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ShapeComponent.generated.h
 D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CapsuleComponent.generated.h
+d:\github\pruebanovarama\topshooter\source\topshooter\TopShooterCharacter.h
+D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Inc\TopShooter\TopShooterCharacter.generated.h
+d:\github\pruebanovarama\topshooter\source\topshooter\HealhSystemComponent.h
+D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Inc\TopShooter\HealhSystemComponent.generated.h

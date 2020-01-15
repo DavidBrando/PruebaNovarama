@@ -6,6 +6,7 @@
 #include "GameFramework/PlayerController.h"
 #include "Components/CapsuleComponent.h"
 #include "TopShooterCharacter.h"
+#include "HealhSystemComponent.h"
 
 
 // Sets default values
@@ -44,10 +45,9 @@ AEnemies::AEnemies()
 	//arm1->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	//arm2->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
-
-	health = 40.f;
-	maxHealth = health;
-	alive = true;
+	healthSystem = CreateDefaultSubobject<UHealhSystemComponent>(TEXT("EnemyInfo"));
+	this->AddOwnedComponent(healthSystem);
+	healthSystem->SettingHeal(40.0f);
 
 }
 
@@ -90,16 +90,4 @@ void AEnemies::OnOverlapBegin(UPrimitiveComponent * OverlappedComp, AActor * Oth
 
 }
 
-bool AEnemies::HealSystem(float f)
-{
-
-	health += f;
-
-	if (health <= 0.0f) {
-		alive = false;
-		return true;
-	}
-
-	return false;
-}
 
