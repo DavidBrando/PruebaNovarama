@@ -76,6 +76,12 @@
     <ClInclude Include="..\..\Source\TopShooter\HealhSystemComponent.h">
       <Filter>Source\TopShooter</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\TopShooter\MyAIController.h">
+      <Filter>Source\TopShooter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TopShooter\EnemyController.h">
+      <Filter>Source\TopShooter</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\TopShooter\Weapons.cpp">
@@ -91,6 +97,12 @@
       <Filter>Source\TopShooter</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\TopShooter\HealhSystemComponent.cpp">
+      <Filter>Source\TopShooter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopShooter\MyAIController.cpp">
+      <Filter>Source\TopShooter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopShooter\EnemyController.cpp">
       <Filter>Source\TopShooter</Filter>
     </ClCompile>
   </ItemGroup>
