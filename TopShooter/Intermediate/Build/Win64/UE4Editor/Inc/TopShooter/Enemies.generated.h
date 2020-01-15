@@ -11,6 +11,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class UPrimitiveComponent;
 class AActor;
 struct FHitResult;
+struct FVector;
 #ifdef TOPSHOOTER_Enemies_generated_h
 #error "Enemies.generated.h already included, missing '#pragma once' in Enemies.h"
 #endif
@@ -30,6 +31,15 @@ struct FHitResult;
 		P_NATIVE_BEGIN; \
 		P_THIS->OnOverlapBegin(Z_Param_OverlappedComp,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult); \
 		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execLookAt) \
+	{ \
+		P_GET_STRUCT(FVector,Z_Param_v); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->LookAt(Z_Param_v); \
+		P_NATIVE_END; \
 	}
 
 
@@ -46,6 +56,15 @@ struct FHitResult;
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
 		P_THIS->OnOverlapBegin(Z_Param_OverlappedComp,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execLookAt) \
+	{ \
+		P_GET_STRUCT(FVector,Z_Param_v); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->LookAt(Z_Param_v); \
 		P_NATIVE_END; \
 	}
 
@@ -96,7 +115,8 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AEnemies); \
 	FORCEINLINE static uint32 __PPO__damage() { return STRUCT_OFFSET(AEnemies, damage); } \
 	FORCEINLINE static uint32 __PPO__arm1() { return STRUCT_OFFSET(AEnemies, arm1); } \
 	FORCEINLINE static uint32 __PPO__arm2() { return STRUCT_OFFSET(AEnemies, arm2); } \
-	FORCEINLINE static uint32 __PPO__healthSystem() { return STRUCT_OFFSET(AEnemies, healthSystem); }
+	FORCEINLINE static uint32 __PPO__healthSystem() { return STRUCT_OFFSET(AEnemies, healthSystem); } \
+	FORCEINLINE static uint32 __PPO__attacking() { return STRUCT_OFFSET(AEnemies, attacking); }
 
 
 #define TopShooter_Source_TopShooter_Enemies_h_14_PROLOG

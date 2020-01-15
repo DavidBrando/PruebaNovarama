@@ -5,6 +5,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/PlayerController.h"
 #include "Components/CapsuleComponent.h"
+#include "Kismet/KismetMathLibrary.h"
 #include "TopShooterCharacter.h"
 #include "HealhSystemComponent.h"
 
@@ -48,6 +49,7 @@ AEnemies::AEnemies()
 	healthSystem = CreateDefaultSubobject<UHealhSystemComponent>(TEXT("EnemyInfo"));
 	this->AddOwnedComponent(healthSystem);
 	healthSystem->SettingHeal(40.0f);
+	attacking = false;
 
 }
 
@@ -76,6 +78,18 @@ void AEnemies::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 }
 
+void AEnemies::LookAt(FVector v)
+{
+
+	const FVector myPos = GetActorLocation();
+	FRotator rot = UKismetMathLibrary::FindLookAtRotation(myPos, v);
+
+	//GEngine->AddOnScreenDebugMessage(-1, 0.0f, FColor::Cyan, rot.ToString());
+
+	SetActorRotation(FRotator(0.0f, rot.Yaw, 0.0f));
+}
+
+
 void AEnemies::OnOverlapBegin(UPrimitiveComponent * OverlappedComp, AActor * OtherActor, UPrimitiveComponent * OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
 {
 
@@ -83,7 +97,9 @@ void AEnemies::OnOverlapBegin(UPrimitiveComponent * OverlappedComp, AActor * Oth
 
 	if (character != nullptr) {
 
-		//UGameplay
+		
+		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Cyan, character->GetName());
+
 
 	}
 

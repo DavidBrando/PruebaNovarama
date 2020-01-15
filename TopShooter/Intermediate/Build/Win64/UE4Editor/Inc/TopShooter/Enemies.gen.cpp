@@ -17,6 +17,8 @@ void EmptyLinkFunctionForGeneratedCodeEnemies() {}
 	TOPSHOOTER_API UClass* Z_Construct_UClass_AEnemies();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	UPackage* Z_Construct_UPackage__Script_TopShooter();
+	TOPSHOOTER_API UFunction* Z_Construct_UFunction_AEnemies_LookAt();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	TOPSHOOTER_API UFunction* Z_Construct_UFunction_AEnemies_OnOverlapBegin();
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
@@ -28,9 +30,42 @@ void EmptyLinkFunctionForGeneratedCodeEnemies() {}
 	{
 		UClass* Class = AEnemies::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "LookAt", &AEnemies::execLookAt },
 			{ "OnOverlapBegin", &AEnemies::execOnOverlapBegin },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AEnemies_LookAt_Statics
+	{
+		struct Enemies_eventLookAt_Parms
+		{
+			FVector v;
+		};
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_v;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AEnemies_LookAt_Statics::NewProp_v = { "v", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Enemies_eventLookAt_Parms, v), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AEnemies_LookAt_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AEnemies_LookAt_Statics::NewProp_v,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AEnemies_LookAt_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Enemies.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AEnemies_LookAt_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEnemies, nullptr, "LookAt", sizeof(Enemies_eventLookAt_Parms), Z_Construct_UFunction_AEnemies_LookAt_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_AEnemies_LookAt_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04820401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AEnemies_LookAt_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AEnemies_LookAt_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AEnemies_LookAt()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AEnemies_LookAt_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_AEnemies_OnOverlapBegin_Statics
 	{
@@ -125,6 +160,11 @@ void EmptyLinkFunctionForGeneratedCodeEnemies() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_attacking_MetaData[];
+#endif
+		static void NewProp_attacking_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_attacking;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_healthSystem_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_healthSystem;
@@ -149,6 +189,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemies() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_TopShooter,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AEnemies_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AEnemies_LookAt, "LookAt" }, // 2568431131
 		{ &Z_Construct_UFunction_AEnemies_OnOverlapBegin, "OnOverlapBegin" }, // 128702322
 	};
 #if WITH_METADATA
@@ -158,6 +199,18 @@ void EmptyLinkFunctionForGeneratedCodeEnemies() {}
 		{ "ModuleRelativePath", "Enemies.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemies_Statics::NewProp_attacking_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "InfoCharacter" },
+		{ "ModuleRelativePath", "Enemies.h" },
+	};
+#endif
+	void Z_Construct_UClass_AEnemies_Statics::NewProp_attacking_SetBit(void* Obj)
+	{
+		((AEnemies*)Obj)->attacking = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AEnemies_Statics::NewProp_attacking = { "attacking", nullptr, (EPropertyFlags)0x0020080000020005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AEnemies), &Z_Construct_UClass_AEnemies_Statics::NewProp_attacking_SetBit, METADATA_PARAMS(Z_Construct_UClass_AEnemies_Statics::NewProp_attacking_MetaData, ARRAY_COUNT(Z_Construct_UClass_AEnemies_Statics::NewProp_attacking_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemies_Statics::NewProp_healthSystem_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -194,6 +247,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemies() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEnemies_Statics::NewProp_damage = { "damage", nullptr, (EPropertyFlags)0x0020080000020005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemies, damage), METADATA_PARAMS(Z_Construct_UClass_AEnemies_Statics::NewProp_damage_MetaData, ARRAY_COUNT(Z_Construct_UClass_AEnemies_Statics::NewProp_damage_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEnemies_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemies_Statics::NewProp_attacking,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemies_Statics::NewProp_healthSystem,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemies_Statics::NewProp_arm2,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemies_Statics::NewProp_arm1,
@@ -226,7 +280,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemies() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEnemies, 1576479449);
+	IMPLEMENT_CLASS(AEnemies, 531274722);
 	template<> TOPSHOOTER_API UClass* StaticClass<AEnemies>()
 	{
 		return AEnemies::StaticClass();

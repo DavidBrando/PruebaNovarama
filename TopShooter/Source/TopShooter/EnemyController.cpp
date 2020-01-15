@@ -41,6 +41,7 @@ AEnemyController::AEnemyController()
 void AEnemyController::BeginPlay()
 {
 	Super::BeginPlay();
+
 }
 
 void AEnemyController::OnPossess(APawn * InPawn)
@@ -51,7 +52,11 @@ void AEnemyController::OnPossess(APawn * InPawn)
 
 void AEnemyController::Tick(float DeltaSeconds)
 {
+	Super::Tick(DeltaSeconds);
+
 }
+
+
 
 
 void AEnemyController::OnActorDetected(AActor * actor, FAIStimulus Stimuli)

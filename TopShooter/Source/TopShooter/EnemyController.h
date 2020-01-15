@@ -31,7 +31,7 @@ public:
 	virtual void OnPossess(APawn *InPawn) override;
 
 	virtual void Tick(float DeltaSeconds) override;
-	
+
 	UFUNCTION()
 	void OnActorDetected(AActor *actor, FAIStimulus Stimuli);
 

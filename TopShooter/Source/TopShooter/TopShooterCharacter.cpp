@@ -140,13 +140,15 @@ void ATopShooterCharacter::LookAtPosition(FVector pos)
 	const FVector myPos = GetActorLocation();
 	FRotator rot = UKismetMathLibrary::FindLookAtRotation(myPos, pos);
 
-	GEngine->AddOnScreenDebugMessage(-1, 0.0f, FColor::Cyan, rot.ToString());
+	//GEngine->AddOnScreenDebugMessage(-1, 0.0f, FColor::Cyan, rot.ToString());
 
 	SetActorRotation(FRotator(0.0f, rot.Yaw, 0.0f));
 }
 
 void ATopShooterCharacter::OnOverlapBegin(UPrimitiveComponent * OverlappedComp, AActor * OtherActor, UPrimitiveComponent * OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
 {
+
+
 }
 
 void ATopShooterCharacter::HealSystem(float f)
