@@ -5,12 +5,6 @@ D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Source\Runtime\AIModule\Classes
 D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AIModule\AIBlueprintHelperLibrary.generated.h
 D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Source\Runtime/Engine/Classes/Components/DecalComponent.h
 D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DecalComponent.generated.h
-D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Source\Runtime\HeadMountedDisplay\Public\HeadMountedDisplayFunctionLibrary.h
-d:\program files (x86)\epic games\ue_4.22\engine\source\runtime\headmounteddisplay\public\HeadMountedDisplayTypes.h
-D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\HeadMountedDisplay\HeadMountedDisplayTypes.generated.h
-d:\program files (x86)\epic games\ue_4.22\engine\source\runtime\headmounteddisplay\public\IIdentifiableXRDevice.h
-D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\HeadMountedDisplay\IIdentifiableXRDevice.generated.h
-D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\HeadMountedDisplay\HeadMountedDisplayFunctionLibrary.generated.h
 d:\github\pruebanovarama\topshooter\source\topshooter\TopShooterCharacter.h
 D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
 D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h

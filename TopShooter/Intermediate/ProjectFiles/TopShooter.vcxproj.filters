@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\TopShooter.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{6076236C-4A19-48E7-B2F1-545E17BD2815}</UniqueIdentifier>
+      <UniqueIdentifier>{A1551E2F-C486-40C7-9266-C3C47059D60C}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\TopShooter.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{D219D293-2C03-4390-8568-A5BD52287339}</UniqueIdentifier>
+      <UniqueIdentifier>{53B653AC-907E-4F6C-B8F8-5D24AAA1CBC7}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,8 +30,44 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\TopShooter">
-      <UniqueIdentifier>{DE566424-64C7-476D-8BE4-28A6A18C8AB7}</UniqueIdentifier>
+      <UniqueIdentifier>{D8435EDE-26A3-4DA9-82A6-3E69A2AA6C73}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\TopShooter\Bullets.cpp">
+      <Filter>Source\TopShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TopShooter\Bullets.h">
+      <Filter>Source\TopShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TopShooter\Enemies.cpp">
+      <Filter>Source\TopShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TopShooter\Enemies.h">
+      <Filter>Source\TopShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TopShooter\EnemyController.cpp">
+      <Filter>Source\TopShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TopShooter\EnemyController.h">
+      <Filter>Source\TopShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TopShooter\HealhSystemComponent.cpp">
+      <Filter>Source\TopShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TopShooter\HealhSystemComponent.h">
+      <Filter>Source\TopShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TopShooter\MainMenuController.cpp">
+      <Filter>Source\TopShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TopShooter\MainMenuController.h">
+      <Filter>Source\TopShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TopShooter\PowerUp.cpp">
+      <Filter>Source\TopShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TopShooter\PowerUp.h">
+      <Filter>Source\TopShooter</Filter>
+    </ClInclude>
     <None Include="..\..\Source\TopShooter\TopShooter.Build.cs">
       <Filter>Source\TopShooter</Filter>
     </None>
@@ -59,51 +95,11 @@
     <ClInclude Include="..\..\Source\TopShooter\TopShooterPlayerController.h">
       <Filter>Source\TopShooter</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\TopShooter\Weapons.h">
-      <Filter>Source\TopShooter</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\TopShooter\Bullets.h">
-      <Filter>Source\TopShooter</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\TopShooter\PowerUp.h">
-      <Filter>Source\TopShooter</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\TopShooter\Enemies.h">
-      <Filter>Source\TopShooter</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\TopShooter\HealhSystemComponent.h">
-      <Filter>Source\TopShooter</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\TopShooter\MyAIController.h">
-      <Filter>Source\TopShooter</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\TopShooter\EnemyController.h">
-      <Filter>Source\TopShooter</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="..\..\Source\TopShooter\Weapons.cpp">
       <Filter>Source\TopShooter</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\TopShooter\Bullets.cpp">
+    <ClInclude Include="..\..\Source\TopShooter\Weapons.h">
       <Filter>Source\TopShooter</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\TopShooter\PowerUp.cpp">
-      <Filter>Source\TopShooter</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\TopShooter\Enemies.cpp">
-      <Filter>Source\TopShooter</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\TopShooter\HealhSystemComponent.cpp">
-      <Filter>Source\TopShooter</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\TopShooter\MyAIController.cpp">
-      <Filter>Source\TopShooter</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\TopShooter\EnemyController.cpp">
-      <Filter>Source\TopShooter</Filter>
-    </ClCompile>
+    </ClInclude>
   </ItemGroup>
 </Project>

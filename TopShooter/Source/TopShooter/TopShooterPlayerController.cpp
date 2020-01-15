@@ -3,7 +3,6 @@
 #include "TopShooterPlayerController.h"
 #include "Blueprint/AIBlueprintHelperLibrary.h"
 #include "Runtime/Engine/Classes/Components/DecalComponent.h"
-#include "HeadMountedDisplayFunctionLibrary.h"
 #include "TopShooterCharacter.h"
 #include "Engine/World.h"
 
@@ -21,6 +20,7 @@ void ATopShooterPlayerController::PlayerTick(float DeltaTime)
 	if (bMoveToMouseCursor)
 	{
 		MoveToMouseCursor();
+
 	}
 }
 
