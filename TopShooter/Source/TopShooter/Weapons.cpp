@@ -42,7 +42,7 @@ void AWeapons::Tick(float DeltaTime)
 }
 
 
-void AWeapons::ShootProjectile(FVector forwardPlayer) {
+void AWeapons::ShootProjectile() {
 
 
 	if (shooting == false) {
@@ -52,7 +52,7 @@ void AWeapons::ShootProjectile(FVector forwardPlayer) {
 		FHitResult OutHit;
 		FVector start = spawnPoint->GetComponentLocation();
 		//FVector end = (spawnPoint->GetForwardVector() * 500.0f) + start;
-		FVector end = (forwardPlayer * 500.0f) + start;
+		FVector end = (GetOwner()->GetActorForwardVector() * 500.0f) + start;
 
 		FCollisionQueryParams ColisionParams;
 		
@@ -111,11 +111,15 @@ void AWeapons::SetPowerShoot(float b)
 
 }
 
-
+//reset shooting system for creating more bullets
 void AWeapons::ResetShooting()
 {
 	shooting = false;
 	GetWorld()->GetTimerManager().ClearTimer(FireRatioDelay);
+
+	if (autoFire == true) {
+		ShootProjectile();
+	}
 
 }
 

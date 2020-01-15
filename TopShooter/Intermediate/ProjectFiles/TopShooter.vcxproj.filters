@@ -70,6 +70,9 @@
     <ClInclude Include="..\..\Source\TopShooter\PowerUp.h">
       <Filter>Source\TopShooter</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\TopShooter\Enemies.h">
+      <Filter>Source\TopShooter</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\TopShooter\Weapons.cpp">
@@ -79,6 +82,9 @@
       <Filter>Source\TopShooter</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\TopShooter\PowerUp.cpp">
+      <Filter>Source\TopShooter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopShooter\Enemies.cpp">
       <Filter>Source\TopShooter</Filter>
     </ClCompile>
   </ItemGroup>

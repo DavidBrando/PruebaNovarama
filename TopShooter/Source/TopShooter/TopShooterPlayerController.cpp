@@ -59,39 +59,28 @@ void ATopShooterPlayerController::MoveToMouseCursor()
 		{
 			//GEngine->AddOnScreenDebugMessage(-1, 0.0f, FColor::Blue, Hit.ToString());
 
-			// We hit something, move there
-			SetNewMoveDestination(Hit.ImpactPoint);
 
 			if (myPawn != nullptr) {
 
 				myPawn->LookAtPosition(Hit.ImpactPoint);
-				myPawn->ShootWeapon();
+				//myPawn->ShootWeapon();
 			}
 		}
 	
 }
 
 
-void ATopShooterPlayerController::SetNewMoveDestination(const FVector DestLocation)
-{
-	//APawn* const MyPawn = GetPawn();
-	//if (MyPawn)
-	//{
-	//	float const Distance = FVector::Dist(DestLocation, MyPawn->GetActorLocation());
-
-	//	// We need to issue move command only if far enough in order for walk animation to play correctly
-	//	if ((Distance > 120.0f))
-	//	{
-	//		UAIBlueprintHelperLibrary::SimpleMoveToLocation(this, DestLocation);
-	//	}
-	//}
-}
 
 void ATopShooterPlayerController::OnSetDestinationPressed()
 {
 	// set flag to keep updating destination until released
 
 	bMoveToMouseCursor = true;
+
+	if (myPawn != nullptr) {
+		myPawn->ShootWeapon();
+
+	}
 }
 
 void ATopShooterPlayerController::OnSetDestinationReleased()
@@ -99,6 +88,11 @@ void ATopShooterPlayerController::OnSetDestinationReleased()
 	// clear flag to indicate we should stop updating the destination
 
 	bMoveToMouseCursor = false;
+
+	if (myPawn != nullptr) {
+		myPawn->ReleaseWeapon();
+
+	}
 }
 
 

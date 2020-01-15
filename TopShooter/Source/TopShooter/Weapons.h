@@ -36,7 +36,7 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	void ShootProjectile(FVector forwardPlayer);
+	void ShootProjectile();
 
 	void ResetShooting();
 	void ResetPowerUpFireRate();
@@ -44,6 +44,7 @@ public:
 
 	void SetFireRate(float f);
 	void SetPowerShoot(float b);
+	void SetAutoFire(bool b) { autoFire = b; }
 
 	bool GetPowerShoot() { return powerShoots; }
 	bool GetFireRateUp() { return fireRateUp; }
@@ -58,6 +59,7 @@ private:
 	bool shooting;
 	bool powerShoots;
 	bool fireRateUp;
+	bool autoFire;
 
 	FTimerHandle FireRatioDelay;
 	FTimerHandle ResetPowerUpFire;

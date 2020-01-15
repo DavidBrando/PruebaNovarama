@@ -170,6 +170,12 @@ void ATopShooterCharacter::SettingMovement(bool yawControl, bool orientationMoti
 
 void ATopShooterCharacter::ShootWeapon() {
 
-	currentWeapon->ShootProjectile(GetActorForwardVector());
+	currentWeapon->SetAutoFire(true);
+	currentWeapon->ShootProjectile();
+
+}
+
+void ATopShooterCharacter::ReleaseWeapon() {
+	currentWeapon->SetAutoFire(false);
 
 }

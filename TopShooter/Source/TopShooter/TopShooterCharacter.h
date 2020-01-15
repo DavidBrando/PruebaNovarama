@@ -26,6 +26,8 @@ public:
 
 	void ShootWeapon();
 
+	void ReleaseWeapon();
+
 	/** Returns TopDownCameraComponent subobject **/
 	FORCEINLINE class UCameraComponent* GetTopDownCameraComponent() const { return TopDownCameraComponent; }
 	/** Returns CameraBoom subobject **/

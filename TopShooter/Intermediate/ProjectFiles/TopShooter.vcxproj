@@ -266,9 +266,11 @@
   </PropertyGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\TopShooter\Bullets.cpp" />
+    <ClCompile Include="..\..\Source\TopShooter\Enemies.cpp" />
     <ClCompile Include="..\..\Source\TopShooter\PowerUp.cpp" />
     <ClCompile Include="..\..\Source\TopShooter\Weapons.cpp" />
     <ClInclude Include="..\..\Source\TopShooter\Bullets.h" />
+    <ClInclude Include="..\..\Source\TopShooter\Enemies.h" />
     <ClInclude Include="..\..\Source\TopShooter\PowerUp.h" />
     <ClInclude Include="..\..\Source\TopShooter\Weapons.h" />
     <None Include="..\..\TopShooter.uproject" />
