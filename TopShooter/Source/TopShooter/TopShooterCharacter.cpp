@@ -68,6 +68,8 @@ ATopShooterCharacter::ATopShooterCharacter()
 	healthSystem = CreateDefaultSubobject<UHealhSystemComponent>(TEXT("InfoPlayer"));
 	this->AddOwnedComponent(healthSystem);
 
+	dying = false;
+
 }
 
 void ATopShooterCharacter::BeginPlay()
@@ -160,7 +162,10 @@ float ATopShooterCharacter::TakeDamage(float Damage, FDamageEvent const & Damage
 
 	if (alive == false) {
 
-		if (AnimMontage) {
+
+		if (AnimMontage && dying == false) {
+
+			dying = true;
 
 			float time = PlayAnimMontage(AnimMontage);
 
