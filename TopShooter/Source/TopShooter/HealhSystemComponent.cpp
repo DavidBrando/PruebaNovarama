@@ -41,7 +41,7 @@ bool UHealhSystemComponent::TakeDamage(float dmg)
 {
 	health -= dmg;
 
-	if (health <= 0.0f) {
+	if (health <= 0.00000001f) {
 		alive = false;
 	}
 
@@ -62,8 +62,9 @@ void UHealhSystemComponent::Heal(float vCuracion)
 
 void UHealhSystemComponent::SettingHeal(float h)
 {
+	alive = true;
 	health = h;
 	maxHealth = h;
-	alive = true;
+	
 }
 

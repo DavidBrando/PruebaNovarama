@@ -1,0 +1,97 @@
+/MANIFEST:NO
+/NOLOGO
+/DEBUG
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/FIXED:No
+/NXCOMPAT
+/STACK:5000000
+/DELAY:UNLOAD
+/DLL
+/PDBALTPATH:%_PDB%
+/OPT:NOREF
+/OPT:NOICF
+/INCREMENTAL:NO
+/ignore:4199
+/ignore:4099
+/DELAYLOAD:"d3d12.dll"
+/DELAYLOAD:"DBGHELP.DLL"
+/LIBPATH:"D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.16.27023\lib\x64"
+/LIBPATH:"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\lib\um\x64"
+/LIBPATH:"C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\ucrt\x64"
+/LIBPATH:"C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64"
+/NODEFAULTLIB:"LIBCMT"
+/NODEFAULTLIB:"LIBCPMT"
+/NODEFAULTLIB:"LIBCMTD"
+/NODEFAULTLIB:"LIBCPMTD"
+/NODEFAULTLIB:"MSVCRTD"
+/NODEFAULTLIB:"MSVCPRTD"
+/NODEFAULTLIB:"LIBC"
+/NODEFAULTLIB:"LIBCP"
+/NODEFAULTLIB:"LIBCD"
+/NODEFAULTLIB:"LIBCPD"
+/FUNCTIONPADMIN
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\TopShooterEditor\Development\Engine\SharedPCH.Engine.h.obj"
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\Bullets.cpp.obj"
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\Enemies.cpp.obj"
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\EnemyController.cpp.obj"
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\HealhSystemComponent.cpp.obj"
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\MainMenuController.cpp.obj"
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\PowerUp.cpp.obj"
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\TopShooter.cpp.obj"
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\TopShooterCharacter.cpp.obj"
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\TopShooterGameMode.cpp.obj"
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\TopShooterPlayerController.cpp.obj"
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\Weapons.cpp.obj"
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\Bullets.gen.cpp.obj"
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\Enemies.gen.cpp.obj"
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\EnemyController.gen.cpp.obj"
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\HealhSystemComponent.gen.cpp.obj"
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\MainMenuController.gen.cpp.obj"
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\PowerUp.gen.cpp.obj"
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\TopShooter.init.gen.cpp.obj"
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\TopShooterCharacter.gen.cpp.obj"
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\TopShooterGameMode.gen.cpp.obj"
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\TopShooterPlayerController.gen.cpp.obj"
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\Weapons.gen.cpp.obj"
+"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\Default.rc2.res"
+"delayimp.lib"
+"wininet.lib"
+"rpcrt4.lib"
+"ws2_32.lib"
+"dbghelp.lib"
+"comctl32.lib"
+"Winmm.lib"
+"kernel32.lib"
+"user32.lib"
+"gdi32.lib"
+"winspool.lib"
+"comdlg32.lib"
+"advapi32.lib"
+"shell32.lib"
+"ole32.lib"
+"oleaut32.lib"
+"uuid.lib"
+"odbc32.lib"
+"odbccp32.lib"
+"netapi32.lib"
+"iphlpapi.lib"
+"setupapi.lib"
+"dwmapi.lib"
+"imm32.lib"
+"D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\UE4Editor-Engine.lib"
+"D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Development\AIModule\UE4Editor-AIModule.lib"
+"D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Development\Core\UE4Editor-Core.lib"
+"D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Development\CoreUObject\UE4Editor-CoreUObject.lib"
+"D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Development\InputCore\UE4Editor-InputCore.lib"
+"D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Development\HeadMountedDisplay\UE4Editor-HeadMountedDisplay.lib"
+"D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Development\NavigationSystem\UE4Editor-NavigationSystem.lib"
+"D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Development\UMG\UE4Editor-UMG.lib"
+"D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Development\Slate\UE4Editor-Slate.lib"
+"D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Development\SlateCore\UE4Editor-SlateCore.lib"
+/OUT:"D:\GitHub\PruebaNovarama\TopShooter\Binaries\Win64\UE4Editor-TopShooter-0247.dll"
+/IMPLIB:"D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\UE4Editor-TopShooter-0247.suppressed.lib"
+/PDB:"D:\GitHub\PruebaNovarama\TopShooter\Binaries\Win64\UE4Editor-TopShooter-0247.pdb"
+/ignore:4078
+/INCLUDE:IMPLEMENT_MODULE_TopShooter

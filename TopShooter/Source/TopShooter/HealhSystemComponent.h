@@ -49,6 +49,5 @@ public:
 		bool GetAlive() { return alive; }
 
 	void SettingHeal(float h);
-
 		
 };

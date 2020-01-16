@@ -116,7 +116,8 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AEnemies); \
 	FORCEINLINE static uint32 __PPO__arm1() { return STRUCT_OFFSET(AEnemies, arm1); } \
 	FORCEINLINE static uint32 __PPO__arm2() { return STRUCT_OFFSET(AEnemies, arm2); } \
 	FORCEINLINE static uint32 __PPO__healthSystem() { return STRUCT_OFFSET(AEnemies, healthSystem); } \
-	FORCEINLINE static uint32 __PPO__attacking() { return STRUCT_OFFSET(AEnemies, attacking); }
+	FORCEINLINE static uint32 __PPO__attacking() { return STRUCT_OFFSET(AEnemies, attacking); } \
+	FORCEINLINE static uint32 __PPO__AnimMontage() { return STRUCT_OFFSET(AEnemies, AnimMontage); }
 
 
 #define TopShooter_Source_TopShooter_Enemies_h_14_PROLOG

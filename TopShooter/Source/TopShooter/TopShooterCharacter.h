@@ -37,10 +37,8 @@ public:
 
 	AWeapons* GetCurrentWeapon() { return currentWeapon; }
 
+	bool GetAlive();
 	void LookAtPosition(FVector pos);
-
-	UFUNCTION()
-	void OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
 	void HealSystem(float f);
 
@@ -73,6 +71,8 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = InfoCharacter, meta = (AllowPrivateAccess = "true"))
 	class UHealhSystemComponent* healthSystem;
+
+	virtual float TakeDamage(float Damage, FDamageEvent const & DamageEvent, AController * EventInstigator, AActor * DamageCauser) override;
 
 };
 

@@ -32,7 +32,7 @@ ABullets::ABullets()
 	bullet = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Bullet"));
 	bullet->SetupAttachment(root);
 
-	damage = 20.f;
+	damage = 25.0f;
 
 }
 
@@ -60,11 +60,16 @@ void ABullets::OnOverlapBegin(UPrimitiveComponent * OverlappedComp, AActor * Oth
 	
 	if (OtherActor != nullptr && OtherActor != GetOwner()) {
 
-		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, OtherActor->GetName() + "---- ME MUERO");
+		//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, OtherActor->GetName() + "---- ME MUERO");
 
 		//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, SweepResult.ImpactPoint.ToString());
 
 		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), explosion, GetActorLocation(), FRotator(0.0f));
+
+		TSubclassOf<UDamageType> const ValidDamageTypeClass;
+		FDamageEvent DamageEvent(ValidDamageTypeClass);
+
+		OtherActor->TakeDamage(damage, DamageEvent, nullptr, this);
 
 		Destroy();
 	

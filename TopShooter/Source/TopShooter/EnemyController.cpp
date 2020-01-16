@@ -61,7 +61,6 @@ void AEnemyController::Tick(float DeltaSeconds)
 
 void AEnemyController::OnActorDetected(AActor * actor, FAIStimulus Stimuli)
 {
-	//GetBlackboardComponent()->GetKeyID();
 
 	if (Stimuli.WasSuccessfullySensed()) {
 
@@ -74,16 +73,6 @@ void AEnemyController::OnActorDetected(AActor * actor, FAIStimulus Stimuli)
 		}
 
 	}
-
-	else {
-
-		GetBlackboardComponent()->SetValueAsObject("Player", nullptr);
-
-	}
-
-
-	//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Cyan, actor->GetName());
-
 
 	
 }

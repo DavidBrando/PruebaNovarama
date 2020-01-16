@@ -64,9 +64,6 @@ ATopShooterCharacter::ATopShooterCharacter()
 	PrimaryActorTick.bCanEverTick = true;
 	PrimaryActorTick.bStartWithTickEnabled = true;
 
-	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &ATopShooterCharacter::OnOverlapBegin);
-
-
 	healthSystem = CreateDefaultSubobject<UHealhSystemComponent>(TEXT("InfoPlayer"));
 	this->AddOwnedComponent(healthSystem);
 
@@ -134,6 +131,11 @@ void ATopShooterCharacter::MoveRight(float axis) {
 
 }
 
+bool ATopShooterCharacter::GetAlive()
+{
+	return healthSystem->GetAlive();
+}
+
 void ATopShooterCharacter::LookAtPosition(FVector pos)
 {
 
@@ -145,15 +147,21 @@ void ATopShooterCharacter::LookAtPosition(FVector pos)
 	SetActorRotation(FRotator(0.0f, rot.Yaw, 0.0f));
 }
 
-void ATopShooterCharacter::OnOverlapBegin(UPrimitiveComponent * OverlappedComp, AActor * OtherActor, UPrimitiveComponent * OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
-{
-
-
-}
 
 void ATopShooterCharacter::HealSystem(float f)
 {
 	healthSystem->Heal(f);
+}
+
+float ATopShooterCharacter::TakeDamage(float Damage, FDamageEvent const & DamageEvent, AController * EventInstigator, AActor * DamageCauser)
+{
+	float ActualDamage = Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
+
+	GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Cyan, DamageCauser->GetName() + " ME PEGA CON: " + FString::SanitizeFloat(Damage));
+
+	healthSystem->TakeDamage(Damage);
+
+	return Damage;
 }
 
 void ATopShooterCharacter::SettingMovement(bool yawControl, bool orientationMotion)

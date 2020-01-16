@@ -45,9 +45,6 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, transient)
 		class UBehaviorTreeComponent* BTComp;
 
-	uint8 EnemyKeyID;
-
-
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = AI)
 	float AIRadius = 1000.0f;
 
@@ -58,7 +55,7 @@ protected:
 	float AIRadiusLost = AIRadius + 250.0f;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = AI)
-	float AIFov = 60.0f;
+	float AIFov = 90.0f;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = AI)
 	class UAISenseConfig_Sight* SightConfig;

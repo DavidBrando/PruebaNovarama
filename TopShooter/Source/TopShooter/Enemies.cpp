@@ -2,6 +2,7 @@
 
 
 #include "Enemies.h"
+#include "Engine/World.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/PlayerController.h"
 #include "Components/CapsuleComponent.h"
@@ -50,7 +51,12 @@ AEnemies::AEnemies()
 	this->AddOwnedComponent(healthSystem);
 	healthSystem->SettingHeal(40.0f);
 	attacking = false;
+	damage = 15.0f;
 
+	//if(alive == true)
+	//	GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Red, "true");
+
+	
 }
 
 // Called when the game starts or when spawned
@@ -62,6 +68,31 @@ void AEnemies::BeginPlay()
 	arm2->OnComponentBeginOverlap.AddDynamic(this, &AEnemies::OnOverlapBegin);
 
 	
+}
+
+float AEnemies::TakeDamage(float Damage, FDamageEvent const & DamageEvent, AController * EventInstigator, AActor * DamageCauser)
+{
+	float ActualDamage = Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
+
+	//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Cyan, DamageCauser->GetName() + " ME PEGA CON: " + FString::SanitizeFloat(Damage));
+
+	bool alive = healthSystem->TakeDamage(Damage);
+
+	//if (alive == false) {
+	//	Destroy();
+	//}
+	if (alive == false) {
+
+		//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Cyan, "false");
+		GetCapsuleComponent()->SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel1, ECollisionResponse::ECR_Ignore);
+		GetCharacterMovement()->StopMovementImmediately();
+		float time = PlayAnimMontage(AnimMontage);
+
+		GetWorld()->GetTimerManager().SetTimer(DeadDelay, this, &AEnemies::DeadFunction, time, false);
+
+	}
+	
+	return ActualDamage;
 }
 
 // Called every frame
@@ -98,12 +129,23 @@ void AEnemies::OnOverlapBegin(UPrimitiveComponent * OverlappedComp, AActor * Oth
 	if (character != nullptr) {
 
 		
-		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Cyan, character->GetName());
+		//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Cyan, character->GetName());
+		
+		TSubclassOf<UDamageType> const ValidDamageTypeClass;
+		FDamageEvent DamageEvent(ValidDamageTypeClass);
+		
+		OtherActor->TakeDamage(damage, DamageEvent, nullptr, this);
 
 
 	}
 
 
 }
+
+void AEnemies::DeadFunction()
+{
+	Destroy();
+}
+
 
 
