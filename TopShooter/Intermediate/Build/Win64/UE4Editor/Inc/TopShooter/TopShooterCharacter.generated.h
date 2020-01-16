@@ -62,7 +62,8 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ATopShooterCharacter); \
 	FORCEINLINE static uint32 __PPO__CameraBoom() { return STRUCT_OFFSET(ATopShooterCharacter, CameraBoom); } \
 	FORCEINLINE static uint32 __PPO__CursorToWorld() { return STRUCT_OFFSET(ATopShooterCharacter, CursorToWorld); } \
 	FORCEINLINE static uint32 __PPO__currentWeapon() { return STRUCT_OFFSET(ATopShooterCharacter, currentWeapon); } \
-	FORCEINLINE static uint32 __PPO__healthSystem() { return STRUCT_OFFSET(ATopShooterCharacter, healthSystem); }
+	FORCEINLINE static uint32 __PPO__healthSystem() { return STRUCT_OFFSET(ATopShooterCharacter, healthSystem); } \
+	FORCEINLINE static uint32 __PPO__AnimMontage() { return STRUCT_OFFSET(ATopShooterCharacter, AnimMontage); }
 
 
 #define TopShooter_Source_TopShooter_TopShooterCharacter_h_12_PROLOG

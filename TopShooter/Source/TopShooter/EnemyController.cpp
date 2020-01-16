@@ -73,6 +73,5 @@ void AEnemyController::OnActorDetected(AActor * actor, FAIStimulus Stimuli)
 		}
 
 	}
-
 	
 }

@@ -63,7 +63,6 @@ public:
 	TSubclassOf<class AWeapons> myWeapon;
 
 
-
 protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = InfoCharacter, meta = (AllowPrivateAccess = "true"))
@@ -72,7 +71,11 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = InfoCharacter, meta = (AllowPrivateAccess = "true"))
 	class UHealhSystemComponent* healthSystem;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = InfoCharacter, meta = (AllowPrivateAccess = "true"))
+	UAnimMontage* AnimMontage;
+
 	virtual float TakeDamage(float Damage, FDamageEvent const & DamageEvent, AController * EventInstigator, AActor * DamageCauser) override;
+
 
 };
 

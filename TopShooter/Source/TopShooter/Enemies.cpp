@@ -10,6 +10,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "TopShooterCharacter.h"
 #include "HealhSystemComponent.h"
+#include "GameFramework/Pawn.h"
 
 
 // Sets default values
@@ -52,6 +53,8 @@ AEnemies::AEnemies()
 	attacking = false;
 	damage = 15.0f;
 
+	AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
+
 	
 }
 
@@ -70,22 +73,25 @@ float AEnemies::TakeDamage(float Damage, FDamageEvent const & DamageEvent, ACont
 {
 	float ActualDamage = Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
 
-	//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Cyan, DamageCauser->GetName() + " ME PEGA CON: " + FString::SanitizeFloat(Damage));
-
 	bool alive = healthSystem->TakeDamage(Damage);
 
-	//if (alive == false) {
-	//	Destroy();
-	//}
 	if (alive == false) {
 
-		//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Cyan, "false");
 		GetCapsuleComponent()->SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel1, ECollisionResponse::ECR_Ignore);
 		GetCharacterMovement()->StopMovementImmediately();
 		SettingCollisionForArms(ECollisionEnabled::NoCollision, ECollisionEnabled::NoCollision);
-		float time = PlayAnimMontage(AnimMontage);
 
-		GetWorld()->GetTimerManager().SetTimer(DeadDelay, this, &AEnemies::DeadFunction, time, false);
+		if (AnimMontage) {
+
+			float time = PlayAnimMontage(AnimMontage);
+
+			GetWorld()->GetTimerManager().SetTimer(DeadDelay, this, &AEnemies::DeadFunction, time, false);
+		}
+
+		else {
+			Destroy();
+		}
+	
 
 	}
 	
@@ -112,8 +118,6 @@ void AEnemies::LookAt(FVector v)
 	const FVector myPos = GetActorLocation();
 	FRotator rot = UKismetMathLibrary::FindLookAtRotation(myPos, v);
 
-	//GEngine->AddOnScreenDebugMessage(-1, 0.0f, FColor::Cyan, rot.ToString());
-
 	SetActorRotation(FRotator(0.0f, rot.Yaw, 0.0f));
 }
 
@@ -130,9 +134,6 @@ void AEnemies::OnOverlapBegin(UPrimitiveComponent * OverlappedComp, AActor * Oth
 	ATopShooterCharacter *character = Cast<ATopShooterCharacter>(OtherActor);
 
 	if (character != nullptr) {
-
-		
-		//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Cyan, character->GetName());
 		
 		if (explosion) {
 			UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), explosion, OtherActor->GetActorLocation(), FRotator(0.0f));

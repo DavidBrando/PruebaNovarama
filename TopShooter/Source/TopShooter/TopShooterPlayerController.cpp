@@ -29,8 +29,8 @@ void ATopShooterPlayerController::SetupInputComponent()
 	// set up gameplay key bindings
 	Super::SetupInputComponent();
 
-	InputComponent->BindAction("SetDestination", IE_Pressed, this, &ATopShooterPlayerController::OnSetDestinationPressed);
-	InputComponent->BindAction("SetDestination", IE_Released, this, &ATopShooterPlayerController::OnSetDestinationReleased);
+	InputComponent->BindAction("SetDestination", IE_Pressed, this, &ATopShooterPlayerController::PressShoot);
+	InputComponent->BindAction("SetDestination", IE_Released, this, &ATopShooterPlayerController::UnPressShoot);
 
 	InputComponent->BindAxis("MoveForward", this, &ATopShooterPlayerController::MoveForwardDiretion);
 	InputComponent->BindAxis("MoveRight", this, &ATopShooterPlayerController::MoveRightDiretion);
@@ -57,13 +57,11 @@ void ATopShooterPlayerController::MoveToMouseCursor()
 
 		if (Hit.bBlockingHit)
 		{
-			//GEngine->AddOnScreenDebugMessage(-1, 0.0f, FColor::Blue, Hit.ToString());
-
 
 			if (myPawn != nullptr) {
 
 				myPawn->LookAtPosition(Hit.ImpactPoint);
-				//myPawn->ShootWeapon();
+
 			}
 		}
 	
@@ -71,25 +69,22 @@ void ATopShooterPlayerController::MoveToMouseCursor()
 
 
 
-void ATopShooterPlayerController::OnSetDestinationPressed()
+void ATopShooterPlayerController::PressShoot()
 {
-	// set flag to keep updating destination until released
-
 	bMoveToMouseCursor = true;
 
-	if (myPawn != nullptr) {
+	if (myPawn != nullptr && myPawn->GetAlive()) {
 		myPawn->ShootWeapon();
 
 	}
 }
 
-void ATopShooterPlayerController::OnSetDestinationReleased()
+void ATopShooterPlayerController::UnPressShoot()
 {
-	// clear flag to indicate we should stop updating the destination
 
 	bMoveToMouseCursor = false;
 
-	if (myPawn != nullptr) {
+	if (myPawn != nullptr && myPawn->GetAlive()) {
 		myPawn->ReleaseWeapon();
 
 	}
@@ -98,7 +93,7 @@ void ATopShooterPlayerController::OnSetDestinationReleased()
 
 void ATopShooterPlayerController::MoveForwardDiretion(float value) {
 
-	if (myPawn != nullptr) {
+	if (myPawn != nullptr && myPawn->GetAlive()) {
 		myPawn->MoveForward(value);
 	}
 
@@ -107,7 +102,7 @@ void ATopShooterPlayerController::MoveForwardDiretion(float value) {
 
 void ATopShooterPlayerController::MoveRightDiretion(float value) {
 
-	if (myPawn != nullptr) {
+	if (myPawn != nullptr && myPawn->GetAlive()) {
 		myPawn->MoveRight(value);
 	}
 

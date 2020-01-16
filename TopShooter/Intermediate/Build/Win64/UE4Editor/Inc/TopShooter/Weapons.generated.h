@@ -13,8 +13,44 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TOPSHOOTER_Weapons_generated_h
 
-#define TopShooter_Source_TopShooter_Weapons_h_16_RPC_WRAPPERS
-#define TopShooter_Source_TopShooter_Weapons_h_16_RPC_WRAPPERS_NO_PURE_DECLS
+#define TopShooter_Source_TopShooter_Weapons_h_16_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetFireRateUp) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(bool*)Z_Param__Result=P_THIS->GetFireRateUp(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execGetPowerShoot) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(bool*)Z_Param__Result=P_THIS->GetPowerShoot(); \
+		P_NATIVE_END; \
+	}
+
+
+#define TopShooter_Source_TopShooter_Weapons_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetFireRateUp) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(bool*)Z_Param__Result=P_THIS->GetFireRateUp(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execGetPowerShoot) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(bool*)Z_Param__Result=P_THIS->GetPowerShoot(); \
+		P_NATIVE_END; \
+	}
+
+
 #define TopShooter_Source_TopShooter_Weapons_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAWeapons(); \

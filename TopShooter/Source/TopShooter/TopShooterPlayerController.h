@@ -29,10 +29,8 @@ protected:
 	/** Navigate player to the current mouse cursor location. */
 	void MoveToMouseCursor();
 	
-
-	/** Input handlers for SetDestination action. */
-	void OnSetDestinationPressed();
-	void OnSetDestinationReleased();
+	void PressShoot();
+	void UnPressShoot();
 
 	void MoveForwardDiretion(float value);
 

@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeTopShooterCharacter() {}
 	TOPSHOOTER_API UClass* Z_Construct_UClass_ATopShooterCharacter();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	UPackage* Z_Construct_UPackage__Script_TopShooter();
+	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 	TOPSHOOTER_API UClass* Z_Construct_UClass_UHealhSystemComponent_NoRegister();
 	TOPSHOOTER_API UClass* Z_Construct_UClass_AWeapons_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
@@ -37,6 +38,10 @@ void EmptyLinkFunctionForGeneratedCodeTopShooterCharacter() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AnimMontage_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_AnimMontage;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_healthSystem_MetaData[];
 #endif
@@ -78,6 +83,14 @@ void EmptyLinkFunctionForGeneratedCodeTopShooterCharacter() {}
 		{ "ModuleRelativePath", "TopShooterCharacter.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATopShooterCharacter_Statics::NewProp_AnimMontage_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "InfoCharacter" },
+		{ "ModuleRelativePath", "TopShooterCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATopShooterCharacter_Statics::NewProp_AnimMontage = { "AnimMontage", nullptr, (EPropertyFlags)0x0020080000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATopShooterCharacter, AnimMontage), Z_Construct_UClass_UAnimMontage_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATopShooterCharacter_Statics::NewProp_AnimMontage_MetaData, ARRAY_COUNT(Z_Construct_UClass_ATopShooterCharacter_Statics::NewProp_AnimMontage_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATopShooterCharacter_Statics::NewProp_healthSystem_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -133,6 +146,7 @@ void EmptyLinkFunctionForGeneratedCodeTopShooterCharacter() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATopShooterCharacter_Statics::NewProp_TopDownCameraComponent = { "TopDownCameraComponent", nullptr, (EPropertyFlags)0x00400000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATopShooterCharacter, TopDownCameraComponent), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATopShooterCharacter_Statics::NewProp_TopDownCameraComponent_MetaData, ARRAY_COUNT(Z_Construct_UClass_ATopShooterCharacter_Statics::NewProp_TopDownCameraComponent_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ATopShooterCharacter_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATopShooterCharacter_Statics::NewProp_AnimMontage,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATopShooterCharacter_Statics::NewProp_healthSystem,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATopShooterCharacter_Statics::NewProp_currentWeapon,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATopShooterCharacter_Statics::NewProp_myWeapon,
@@ -167,7 +181,7 @@ void EmptyLinkFunctionForGeneratedCodeTopShooterCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ATopShooterCharacter, 3852730134);
+	IMPLEMENT_CLASS(ATopShooterCharacter, 1904546667);
 	template<> TOPSHOOTER_API UClass* StaticClass<ATopShooterCharacter>()
 	{
 		return ATopShooterCharacter::StaticClass();

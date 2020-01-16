@@ -13,6 +13,7 @@ class ATopShooterGameMode : public AGameModeBase
 
 public:
 	ATopShooterGameMode();
+
 };
 
 

@@ -17,6 +17,8 @@ void EmptyLinkFunctionForGeneratedCodeWeapons() {}
 	TOPSHOOTER_API UClass* Z_Construct_UClass_AWeapons();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_TopShooter();
+	TOPSHOOTER_API UFunction* Z_Construct_UFunction_AWeapons_GetFireRateUp();
+	TOPSHOOTER_API UFunction* Z_Construct_UFunction_AWeapons_GetPowerShoot();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	TOPSHOOTER_API UClass* Z_Construct_UClass_ABullets_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
@@ -24,6 +26,86 @@ void EmptyLinkFunctionForGeneratedCodeWeapons() {}
 // End Cross Module References
 	void AWeapons::StaticRegisterNativesAWeapons()
 	{
+		UClass* Class = AWeapons::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "GetFireRateUp", &AWeapons::execGetFireRateUp },
+			{ "GetPowerShoot", &AWeapons::execGetPowerShoot },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AWeapons_GetFireRateUp_Statics
+	{
+		struct Weapons_eventGetFireRateUp_Parms
+		{
+			bool ReturnValue;
+		};
+		static void NewProp_ReturnValue_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	void Z_Construct_UFunction_AWeapons_GetFireRateUp_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+	{
+		((Weapons_eventGetFireRateUp_Parms*)Obj)->ReturnValue = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AWeapons_GetFireRateUp_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(Weapons_eventGetFireRateUp_Parms), &Z_Construct_UFunction_AWeapons_GetFireRateUp_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AWeapons_GetFireRateUp_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AWeapons_GetFireRateUp_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AWeapons_GetFireRateUp_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Weapons.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AWeapons_GetFireRateUp_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AWeapons, nullptr, "GetFireRateUp", sizeof(Weapons_eventGetFireRateUp_Parms), Z_Construct_UFunction_AWeapons_GetFireRateUp_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_AWeapons_GetFireRateUp_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AWeapons_GetFireRateUp_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AWeapons_GetFireRateUp_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AWeapons_GetFireRateUp()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AWeapons_GetFireRateUp_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AWeapons_GetPowerShoot_Statics
+	{
+		struct Weapons_eventGetPowerShoot_Parms
+		{
+			bool ReturnValue;
+		};
+		static void NewProp_ReturnValue_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	void Z_Construct_UFunction_AWeapons_GetPowerShoot_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+	{
+		((Weapons_eventGetPowerShoot_Parms*)Obj)->ReturnValue = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AWeapons_GetPowerShoot_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(Weapons_eventGetPowerShoot_Parms), &Z_Construct_UFunction_AWeapons_GetPowerShoot_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AWeapons_GetPowerShoot_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AWeapons_GetPowerShoot_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AWeapons_GetPowerShoot_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Weapons.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AWeapons_GetPowerShoot_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AWeapons, nullptr, "GetPowerShoot", sizeof(Weapons_eventGetPowerShoot_Parms), Z_Construct_UFunction_AWeapons_GetPowerShoot_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_AWeapons_GetPowerShoot_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AWeapons_GetPowerShoot_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AWeapons_GetPowerShoot_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AWeapons_GetPowerShoot()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AWeapons_GetPowerShoot_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	UClass* Z_Construct_UClass_AWeapons_NoRegister()
 	{
@@ -32,6 +114,7 @@ void EmptyLinkFunctionForGeneratedCodeWeapons() {}
 	struct Z_Construct_UClass_AWeapons_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
@@ -54,6 +137,10 @@ void EmptyLinkFunctionForGeneratedCodeWeapons() {}
 	UObject* (*const Z_Construct_UClass_AWeapons_Statics::DependentSingletons[])() = {
 		(UObject* (*)())Z_Construct_UClass_AActor,
 		(UObject* (*)())Z_Construct_UPackage__Script_TopShooter,
+	};
+	const FClassFunctionLinkInfo Z_Construct_UClass_AWeapons_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AWeapons_GetFireRateUp, "GetFireRateUp" }, // 3121982605
+		{ &Z_Construct_UFunction_AWeapons_GetPowerShoot, "GetPowerShoot" }, // 2572012044
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AWeapons_Statics::Class_MetaDataParams[] = {
@@ -99,11 +186,11 @@ void EmptyLinkFunctionForGeneratedCodeWeapons() {}
 		nullptr,
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
+		FuncInfo,
 		Z_Construct_UClass_AWeapons_Statics::PropPointers,
 		nullptr,
 		ARRAY_COUNT(DependentSingletons),
-		0,
+		ARRAY_COUNT(FuncInfo),
 		ARRAY_COUNT(Z_Construct_UClass_AWeapons_Statics::PropPointers),
 		0,
 		0x009000A0u,
@@ -118,7 +205,7 @@ void EmptyLinkFunctionForGeneratedCodeWeapons() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AWeapons, 4101681169);
+	IMPLEMENT_CLASS(AWeapons, 392801278);
 	template<> TOPSHOOTER_API UClass* StaticClass<AWeapons>()
 	{
 		return AWeapons::StaticClass();

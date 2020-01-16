@@ -46,7 +46,10 @@ public:
 	void SetPowerShoot(float b);
 	void SetAutoFire(bool b) { autoFire = b; }
 
+	UFUNCTION(BlueprintCallable, BlueprintPure)
 	bool GetPowerShoot() { return powerShoots; }
+
+	UFUNCTION(BlueprintCallable, BlueprintPure)
 	bool GetFireRateUp() { return fireRateUp; }
 
 

@@ -10,6 +10,7 @@
 #include "GameFramework/PlayerController.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "HeadMountedDisplayFunctionLibrary.h"
+#include "Blueprint/UserWidget.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Materials/Material.h"
 #include "Weapons.h"
@@ -142,8 +143,6 @@ void ATopShooterCharacter::LookAtPosition(FVector pos)
 	const FVector myPos = GetActorLocation();
 	FRotator rot = UKismetMathLibrary::FindLookAtRotation(myPos, pos);
 
-	//GEngine->AddOnScreenDebugMessage(-1, 0.0f, FColor::Cyan, rot.ToString());
-
 	SetActorRotation(FRotator(0.0f, rot.Yaw, 0.0f));
 }
 
@@ -157,7 +156,20 @@ float ATopShooterCharacter::TakeDamage(float Damage, FDamageEvent const & Damage
 {
 	float ActualDamage = Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
 
-	healthSystem->TakeDamage(Damage);
+	bool alive = healthSystem->TakeDamage(Damage);
+
+	if (alive == false) {
+
+		if (AnimMontage) {
+
+			float time = PlayAnimMontage(AnimMontage);
+
+		}
+
+		else {
+			Destroy();
+		}
+	}
 
 	return Damage;
 }

@@ -17,3 +17,4 @@ ATopShooterGameMode::ATopShooterGameMode()
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
 }
+
