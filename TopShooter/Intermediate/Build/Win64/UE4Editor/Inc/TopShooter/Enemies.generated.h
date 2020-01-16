@@ -33,6 +33,16 @@ struct FVector;
 		P_NATIVE_END; \
 	} \
  \
+	DECLARE_FUNCTION(execSettingCollisionForArms) \
+	{ \
+		P_GET_PROPERTY(UByteProperty,Z_Param_armC1); \
+		P_GET_PROPERTY(UByteProperty,Z_Param_armC2); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->SettingCollisionForArms(ECollisionEnabled::Type(Z_Param_armC1),ECollisionEnabled::Type(Z_Param_armC2)); \
+		P_NATIVE_END; \
+	} \
+ \
 	DECLARE_FUNCTION(execLookAt) \
 	{ \
 		P_GET_STRUCT(FVector,Z_Param_v); \
@@ -56,6 +66,16 @@ struct FVector;
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
 		P_THIS->OnOverlapBegin(Z_Param_OverlappedComp,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execSettingCollisionForArms) \
+	{ \
+		P_GET_PROPERTY(UByteProperty,Z_Param_armC1); \
+		P_GET_PROPERTY(UByteProperty,Z_Param_armC2); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->SettingCollisionForArms(ECollisionEnabled::Type(Z_Param_armC1),ECollisionEnabled::Type(Z_Param_armC2)); \
 		P_NATIVE_END; \
 	} \
  \
@@ -117,7 +137,8 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AEnemies); \
 	FORCEINLINE static uint32 __PPO__arm2() { return STRUCT_OFFSET(AEnemies, arm2); } \
 	FORCEINLINE static uint32 __PPO__healthSystem() { return STRUCT_OFFSET(AEnemies, healthSystem); } \
 	FORCEINLINE static uint32 __PPO__attacking() { return STRUCT_OFFSET(AEnemies, attacking); } \
-	FORCEINLINE static uint32 __PPO__AnimMontage() { return STRUCT_OFFSET(AEnemies, AnimMontage); }
+	FORCEINLINE static uint32 __PPO__AnimMontage() { return STRUCT_OFFSET(AEnemies, AnimMontage); } \
+	FORCEINLINE static uint32 __PPO__explosion() { return STRUCT_OFFSET(AEnemies, explosion); }
 
 
 #define TopShooter_Source_TopShooter_Enemies_h_14_PROLOG

@@ -64,7 +64,9 @@ void ABullets::OnOverlapBegin(UPrimitiveComponent * OverlappedComp, AActor * Oth
 
 		//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, SweepResult.ImpactPoint.ToString());
 
-		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), explosion, GetActorLocation(), FRotator(0.0f));
+		if (explosion) {
+			UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), explosion, GetActorLocation(), FRotator(0.0f));
+		}
 
 		TSubclassOf<UDamageType> const ValidDamageTypeClass;
 		FDamageEvent DamageEvent(ValidDamageTypeClass);

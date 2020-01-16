@@ -7,6 +7,7 @@
 #include "GameFramework/PlayerController.h"
 #include "Components/CapsuleComponent.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "Kismet/GameplayStatics.h"
 #include "TopShooterCharacter.h"
 #include "HealhSystemComponent.h"
 
@@ -44,17 +45,12 @@ AEnemies::AEnemies()
 	arm2->SetupAttachment(Cast<USceneComponent>(GetMesh()));
 	arm2->AttachToComponent(Cast<USceneComponent>(GetMesh()), rules, "arm2");
 
-	//arm1->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-	//arm2->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-
 	healthSystem = CreateDefaultSubobject<UHealhSystemComponent>(TEXT("EnemyInfo"));
+
 	this->AddOwnedComponent(healthSystem);
 	healthSystem->SettingHeal(40.0f);
 	attacking = false;
 	damage = 15.0f;
-
-	//if(alive == true)
-	//	GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Red, "true");
 
 	
 }
@@ -86,6 +82,7 @@ float AEnemies::TakeDamage(float Damage, FDamageEvent const & DamageEvent, ACont
 		//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Cyan, "false");
 		GetCapsuleComponent()->SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel1, ECollisionResponse::ECR_Ignore);
 		GetCharacterMovement()->StopMovementImmediately();
+		SettingCollisionForArms(ECollisionEnabled::NoCollision, ECollisionEnabled::NoCollision);
 		float time = PlayAnimMontage(AnimMontage);
 
 		GetWorld()->GetTimerManager().SetTimer(DeadDelay, this, &AEnemies::DeadFunction, time, false);
@@ -120,6 +117,12 @@ void AEnemies::LookAt(FVector v)
 	SetActorRotation(FRotator(0.0f, rot.Yaw, 0.0f));
 }
 
+void AEnemies::SettingCollisionForArms(ECollisionEnabled::Type armC1, ECollisionEnabled::Type armC2)
+{
+	arm1->SetCollisionEnabled(armC1);
+	arm2->SetCollisionEnabled(armC2);
+}
+
 
 void AEnemies::OnOverlapBegin(UPrimitiveComponent * OverlappedComp, AActor * OtherActor, UPrimitiveComponent * OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
 {
@@ -131,6 +134,10 @@ void AEnemies::OnOverlapBegin(UPrimitiveComponent * OverlappedComp, AActor * Oth
 		
 		//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Cyan, character->GetName());
 		
+		if (explosion) {
+			UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), explosion, OtherActor->GetActorLocation(), FRotator(0.0f));
+		}
+
 		TSubclassOf<UDamageType> const ValidDamageTypeClass;
 		FDamageEvent DamageEvent(ValidDamageTypeClass);
 		

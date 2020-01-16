@@ -29,6 +29,16 @@ D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Source\Runtime\Engine\Classes\K
 D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Source\Runtime\Core\Public\Misc/QualifiedFrameTime.h
 D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\KismetMathLibrary.generated.h
 d:\program files (x86)\epic games\ue_4.22\engine\source\runtime\engine\classes\kismet\KismetMathLibrary.inl
+D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Source\Runtime\Engine\Classes\Kismet/GameplayStatics.h
+D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Source\Runtime\Engine\Classes\Kismet/KismetSystemLibrary.h
+D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Source\Runtime\Engine\Classes\Engine/CollisionProfile.h
+D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CollisionProfile.generated.h
+D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\KismetSystemLibrary.generated.h
+D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Source\Runtime\Engine\Classes\Sound/DialogueTypes.h
+D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DialogueTypes.generated.h
+d:\program files (x86)\epic games\ue_4.22\engine\source\runtime\engine\classes\kismet\GameplayStaticsTypes.h
+D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStaticsTypes.generated.h
+D:\Program Files (x86)\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStatics.generated.h
 d:\github\pruebanovarama\topshooter\source\topshooter\TopShooterCharacter.h
 D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Inc\TopShooter\TopShooterCharacter.generated.h
 d:\github\pruebanovarama\topshooter\source\topshooter\HealhSystemComponent.h

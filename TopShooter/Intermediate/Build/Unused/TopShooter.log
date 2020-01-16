@@ -1,15 +1,6 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build (D:\GitHub\PruebaNovarama).
-  Creating makefile for TopShooterEditor (ini files are newer than makefile)
   Parsing headers for TopShooterEditor
     Running UnrealHeaderTool "D:\GitHub\PruebaNovarama\TopShooter\TopShooter.uproject" "D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\TopShooterEditor\Development\TopShooterEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
-  Reflection code generated for TopShooterEditor in 5,1344103 seconds
-  Using Visual Studio 2017 14.16.27023 toolchain (D:\Program Files (x86)\Visual Studio\VC\Tools\MSVC\14.16.27023) and Windows 10.0.17763.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  Building 4 actions with 4 processes...
-    [1/4] Enemies.cpp
-    [2/4] UE4Editor-TopShooter-0267.lib
-       Creando biblioteca D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\UE4Editor-TopShooter-0267.lib y objeto D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\UE4Editor-TopShooter-0267.exp
-    [3/4] UE4Editor-TopShooter-0267.dll
-       Creando biblioteca D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\UE4Editor-TopShooter-0267.suppressed.lib y objeto D:\GitHub\PruebaNovarama\TopShooter\Intermediate\Build\Win64\UE4Editor\Development\TopShooter\UE4Editor-TopShooter-0267.suppressed.exp
-    [4/4] TopShooterEditor.target
-  Total time in Parallel executor: 2,45 seconds
-  Total execution time: 9,23 seconds
+  Reflection code generated for TopShooterEditor in 5,2688857 seconds
+  Target is up to date
+  Total execution time: 5,89 seconds

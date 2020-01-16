@@ -157,8 +157,6 @@ float ATopShooterCharacter::TakeDamage(float Damage, FDamageEvent const & Damage
 {
 	float ActualDamage = Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
 
-	GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Cyan, DamageCauser->GetName() + " ME PEGA CON: " + FString::SanitizeFloat(Damage));
-
 	healthSystem->TakeDamage(Damage);
 
 	return Damage;
